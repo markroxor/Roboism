@@ -1,0 +1,12 @@
+#news-box{
+	border: 2px solid black;
+}
+
+footer{
+	background-color: rgb(50, 50, 50);
+	color:white;
+}
+
+footer p{
+	font-size: 13px;
+}

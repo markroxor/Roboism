@@ -1,0 +1,10 @@
+$(document).ready(function(){
+ 	$(".dropdown").mouseenter(function(){		
+ 		$(this).children('div').fadeIn(500);
+ 		$(this).children('div').css("z-index","1");
+ 	});
+ 	$(".dropdown").mouseleave(function(){
+ 		$(this).children('div').fadeOut(500);
+ 		$(this).children('div').css("z-index","-1");			
+ 	});
+ });
