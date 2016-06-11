@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>RoboISM</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="w3css.css">
+		<link rel="stylesheet" type="text/css" href="arrangements.css">
+		<link rel="stylesheet" type="text/css" href="fonts.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>	
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script src="jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="dropdown-animation.js"></script>
+
+	</head>
+
+	<body>
+
+		<! toolbar>
+		<div id = "toolbar" class="w3-top w3-container">
+			<! Upper left logo>
+			<div class="w3-container w3-left">
+				<h4>Logo Here</h4>
+			</div>
+
+			<! navigation bar>
+			<div id= "nav-bar" class="w3-right">
+				<ul class="w3-navbar">
+					<li>
+						<a href="#" class="w3-hover-black w3-red">Home</a>
+					</li>
+					<li>
+						<a href="#" class="w3-hover-black">About Us</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="w3-hover-black">Our Projects</a>
+						<div class="drop-1 w3-dropdown-content w3-card-4 nav-dropdown">
+							<a href="#" class="w3-hover-black">Ongoing Projects</a>
+							<a href="#" class="w3-hover-black">Completed Projects</a>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="w3-hover-black">Our Achievements</a>
+					</li>
+					<li>
+						<a href="#" class="w3-hover-black">Tutorials</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="w3-hover-black">Members</a>
+						<div class="drop-2 w3-dropdown-content w3-card-4 nav-dropdown">
+					    	<a href="#" class="w3-hover-black">First Years</a>
+					    	<a href="#" class="w3-hover-black">Second Years</a>
+					    	<a href="#" class="w3-hover-black">Third Years</a>
+					    	<a href="#" class="w3-hover-black">Fourth Years</a>
+					    	<a href="#" class="w3-hover-black">Alumni</a>
+					    </div>
+					</li>
+					<li>
+						<a href="#" class="w3-hover-black">Support Us!</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!slideshow>
+		<div id="slideshow" >
+			
+		</div>
+
+		<!about-us>
+		<div id="about-us">
+			<h2 class="w3-center">We at Robotcis Club IIT Dhanbad bring innovative ideas to life!</h2>
+			<div class="w3-container w3-row-padding">
+				<h3 class="w3-container w3-col s2">About Us</h3>
+				<div class=" w3-container w3-col s10">
+					<p class="w3-text-justify">
+						We at Robotics Club IIT Dhanbad, better known by RoboISM, are the awesome group of techie geeks who likes to get their hands dirty with code, machine and electroncis. Yet our ultimate aim is to make life easy and the world a better place. Want to know more about us?<br>
+						<a href="#" class="w3-right"><button class="w3-btn w3-hover-red">See More</button></a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!latest news and updates>
+		<div id="news" class="w3-container">
+			<h3>News and Updates</h3>
+			<div id="news-box">
+				<button id="btn-left" class="w3-btn-floating" style="left:0" onclick="nextNews()"><</button>
+				<button id="btn-right" class="w3-btn-floating" style="right:0" onclick="prevNews()">></button>
+			</div>
+		</div>
+
+		<!footer>
+		<footer id="foot" class="w3-row-padding">
+			<div class="w3-col s6 w3-container">
+				<h5>For Nerds</h5>
+				<p>
+					Website powered by Django<br>
+					Languages Used: HTML and CSS as usual, animations in javascript.<br>
+					Libraries Used: <a href="#">Bootstrap</a>, <a href="http://www.w3schools.com/w3css/">W3CSS(A Bootstrap alternative)</a>, <a href="https://jquery.com/">JQuery</a>.
+					This site is totally hard-coded by our Robotics Club Team.<br>
+					<a href="#">Meet the developers</a>
+				</p>
+			</div>
+			<div class="w3-col s6 w3-container">
+				<div class="w3-right">
+					<h5>Find us at</h5>
+					<a href="https://www.facebook.com/roboism/"><img src="logo_fb.png"></a>
+					<a href=""><img src=""></a>
+				</div>
+			</div>
+		</footer>
+	</body>
+
+</html>
