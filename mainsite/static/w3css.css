@@ -12,7 +12,7 @@ small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertic
 sup{top:-0.5em}sub{bottom:-0.25em}
 img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}
 hr{-moz-box-sizing:content-box;box-sizing:content-box}
-code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}
+code,kbd,pre,samp{font-family: 'Cuprum', sans-serif;font-size:1em}
 button,input,select,textarea{font:inherit;margin:0}
 button{overflow:visible}button,select{text-transform:none}
 button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
@@ -26,10 +26,10 @@ fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 legend{border:0;padding:0}pre,textarea{overflow:auto}
 /* End extract from normalize.css */
 
-html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
-h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide{font-family:"Segoe UI",Arial,sans-serif}
-h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
-.w3-serif{font-family:"Times New Roman",Times,serif}
+html,body{font-family: 'Cuprum', sans-serif;font-size:18px;line-height:1.5}html{overflow-x:hidden}
+h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide{font-family: 'Cuprum', sans-serif;}
+h1{font-size:40px}h2{font-size:34px}h3{font-size:28px}h4{font-size:24px}h5{font-size:22px}h6{font-size:20px}
+.w3-serif{font-family: 'Cuprum', sans-serif;}
 h1,h2,h3,h4,h5,h6{font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
 hr{height:0;border:0;border-top:1px solid #eee;margin:20px 0}
@@ -53,7 +53,7 @@ table,th,td{border:none}
 .w3-btn:hover,.w3-btn-block:hover,.w3-btn-floating:hover,.w3-btn-floating-large:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
 .w3-btn-block{width:100%}
 .w3-btn,.w3-btn-floating,.w3-btn-floating-large,.w3-closenav,.w3-opennav{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
-.w3-btn-floating,.w3-btn-floating-large{display:inline-block;text-align:center;color:#fff;background-color:#000;position:relative;overflow:hidden;z-index:1;padding:0;border-radius:50%;cursor:pointer;font-size:24px}
+.w3-btn-floating,.w3-btn-floating-large{display:inline-block;text-align:center;color:#fff;background-color:#000;position:relative;overflow:hidden;z-index:1;padding:0;border-radius:50%;cursor:pointer;font-size:28px}
 .w3-btn-floating{width:40px;height:40px;line-height:40px}
 .w3-btn-floating-large{width:56px;height:56px;line-height:56px}
 .w3-btn-group .w3-btn{float:left}
@@ -92,7 +92,7 @@ ul.w3-ul li:last-child{border-bottom:none}
 .w3-main,#main{transition:margin-left .4s}
 .w3-dropnav{background-color:#fff}.w3-dropnav a:hover{text-decoration:underline!important}
 .w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
-.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}.w3-closebtn{text-decoration:none;float:right;font-size:24px;font-weight:bold;color:inherit}
+.w3-modal-content{margin:auto;background-color:#fff;position:relative;padding:0;outline:0;width:600px}.w3-closebtn{text-decoration:none;float:right;font-size:28px;font-weight:bold;color:inherit}
 .w3-closebtn:hover,.w3-closebtn:focus{color:#000;text-decoration:none;cursor:pointer}
 .w3-pagination{display:inline-block;padding:0;margin:0}.w3-pagination li{display:inline}
 .w3-pagination li a{text-decoration:none;color:#000;float:left;padding:8px 16px}
@@ -241,8 +241,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 0%{-webkit-transform:rotate(0deg);transform: rotate(0deg)}
 100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 .w3-container{padding:0.01em 16px}
-.w3-example{background-color:#f1f1f1;padding:0.01em 16px}
-.w3-code{font-family:Consolas,"courier new";font-size:16px;line-height:1.4;width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #009688;word-wrap:break-word}
+.w3-exampfont-family: 'Cuprum', sans-serif;;font-size:16px;line-height:1.4;width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #009688;word-wrap:break-word}
 .w3-example,.w3-code,.w3-reference{margin:20px 0}
 .w3-card{border:1px solid #ccc}
 .w3-card-2,.w3-example{box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
