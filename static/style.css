@@ -1,6 +1,4 @@
-#news-box{
-	border: 2px solid black;
-}
+/* common */
 
 footer{
 	background-color: rgb(50, 50, 50);
@@ -10,3 +8,63 @@ footer{
 footer p{
 	font-size: 13px;
 }
+
+footer p a{
+	text-decoration: none;
+}
+
+#logo img{
+	border: 3px solid white;
+	border-radius:50%;
+	height:42px;
+	width:42px;	
+}
+
+
+/* common */
+
+/* frontpage */
+
+
+#news{
+	border: 2px solid black;
+}
+
+.rounds{
+	border: 1px solid grey;
+}
+
+
+/* about us */
+
+
+.backstretch img{
+	opacity: 0.25;
+}
+
+.pic{
+    transition: all 1s ease-out;
+}
+
+
+
+@keyframes changeopacity{
+	from{opacity: 1}
+	to{opacity: 0.2}
+}
+
+@keyframes movetext{
+	from{}
+	to{}
+}
+
+.pic:hover{
+     transform:scale(1.1);
+     animation: changeopacity 1s ease-out 1 forwards;
+}
+
+.pic:hover + pic-info{
+	transform: scale(1.25);
+	animation: movetext 1s ease-out forwards;
+}
+

@@ -1,13 +1,48 @@
+/* Common */
 
+#foot{
+	position: relative;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+/* Common */
+
+
+/* frontpage */
 
 #slideshow{
 	position: relative;
-	padding-top: 37px;
+	margin-top: 50px;
+	padding-right: 10%;
+	padding-left: 10%;
 	height: 700px;
-	background-size: cover;
 }
 
-#about-us{
+#slides{
+	height: 100%;
+}
+
+.slide-pics{
+	display: none;
+}
+
+.arrows{
+	cursor: pointer;
+}
+
+.rounds{
+	height: 13px;
+	width: 13px;
+	padding: 0;
+	cursor: pointer;
+}
+
+#about-us-short{
 	position: relative;
 	padding-right: 10%;
 	padding-left: 10%;
@@ -15,10 +50,10 @@
 
 #news{
 	position: relative;
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 50px;
+	margin-bottom: 50px;
 	height: 500px;
 }
 
@@ -32,10 +67,58 @@
 	top: 50%;
 }
 
-#foot{
+
+/* about-us */
+
+#side-nav{
 	position: relative;
-	padding-left: 20%;
-	padding-right: 20%;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: 70px;
 }
+
+#about-us{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+	padding-bottom: 50px;
+}
+
+#about-us-p{
+	padding-bottom: 50px;
+}
+
+#about-us-img{
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.pic-btn{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.pic-btn a{
+	position: relative;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.pic{
+	display: block;
+	margin: auto;
+}
+
+/* Our Projects */
+
+
+
+/* members */
+
+
+
+#member-info{
+	position: relative;
+	padding-right: 10%;
+	padding-left: 10%;
+}
+
