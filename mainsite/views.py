@@ -24,7 +24,7 @@ def support_us(request):
 def alumni(request):
 	return render(request, 'mainsite/alumni.html', {})
 
-def acitve_members(request):
+def active_members(request):
 	return render(request, 'mainsite/active-members.html', {})
 
 def ongoing_projects(request):
