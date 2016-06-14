@@ -1,66 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-
-		<title>RoboISM</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="/static/w3css.css">
-		<link rel="stylesheet" type="text/css" href="/static/arrangements.css">
-		<link rel="stylesheet" type="text/css" href="/static/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-		<script src="/static/jquery.backstretch.min.js"></script>
-
-		<script type="text/javascript" src="/static/dropdown-animation.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
-	</head>
-
-	<body>
-
-		<! toolbar>
-		<div id = "toolbar" class="w3-top w3-container">
-			<! Upper left logo>
-			<div class="w3-container w3-left">
-				<h4>Logo Here</h4>
-			</div>
-
-			<! navigation bar>
-			<div id= "nav-bar" class="w3-right">
-				<ul class="w3-navbar">
-					<li>
-						<a href="#" class="w3-hover-black">Home</a>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">About Us</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="w3-hover-black">Our Projects</a>
-						<div class="drop-1 w3-dropdown-content w3-card-4 nav-dropdown">
-							<a href="#" class="w3-hover-black">Ongoing Projects</a>
-							<a href="#" class="w3-hover-black">Completed Projects</a>
-						</div>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">Our Achievements</a>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">Tutorials</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="w3-hover-black w3-red">Members</a>
-						<div class="drop-2 w3-dropdown-content w3-card-4 nav-dropdown">
-					    	<a href="#" class="w3-hover-black">Active Members</a>
-					    	<a href="#" class="w3-hover-black">Alumni</a>
-					    </div>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">Support Us!</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+{% extends 'mainsite/base.html' %}
+{% block content %}
 
 		<div id="side-nav" class="w3-container">
 			<div class="w3-container">
@@ -75,26 +14,5 @@
 			<p>We at RoboISM do not differentiate on members on basis year. Anyone who is willing to learn or share his/her knowledge are more than welcome to come forward, express their views and participate.</p>
 		</div>
 
-		<!footer>
-		<footer id="foot" class="w3-row-padding">
-			<div class="w3-col s6 w3-container">
-				<h5>For Nerds</h5>
-				<p>
-					Website powered by Django<br>
-					Languages Used: HTML and CSS as usual, animations in javascript.<br>
-					Libraries Used: <a href="#">Bootstrap</a>, <a href="http://www.w3schools.com/w3css/">W3CSS(A Bootstrap alternative)</a>, <a href="https://jquery.com/">JQuery</a>.
-					This site is totally hard-coded by our Robotics Club Team.<br>
-					<a href="#">Meet the developers</a>
-				</p>
-			</div>
-			<div class="w3-col s6 w3-container">
-				<div class="w3-right">
-					<h5>Find us at</h5>
-					<a id="logo" href="https://www.facebook.com/roboism/"><img src="/static/fb.png"></a>
-					<a href=""><img src=""></a>
-				</div>
-			</div>
-		</footer>
-	</body>
 
-</html>
+{% endblock %}

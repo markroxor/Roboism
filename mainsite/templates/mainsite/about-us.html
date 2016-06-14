@@ -1,67 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-
-		<title>RoboISM</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="/static/w3css.css">
-		<link rel="stylesheet" type="text/css" href="/static/arrangements.css">
-		<link rel="stylesheet" type="text/css" href="/static/fonts.css">
-		<link rel="stylesheet" type="text/css" href="/static/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>	
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<script src="/static/jquery.backstretch.min.js"></script>
-		<script type="text/javascript" src="/static/dropdown-animation.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
-		<script type="text/javascript" src="/static/pic-animation.js"></script>
-
-	</head>
-
-	<body>
-
-		<! toolbar>
-		<div id = "toolbar" class="w3-top w3-container">
-			<! Upper left logo>
-			<div class="w3-container w3-left">
-				<h4>Logo Here</h4>
-			</div>
-
-			<! navigation bar>
-			<div id= "nav-bar" class="w3-right">
-				<ul class="w3-navbar">
-					<li>
-						<a href="#" class="w3-hover-black">Home</a>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black w3-red">About Us</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="w3-hover-black">Our Projects</a>
-						<div class="drop-1 w3-dropdown-content w3-card-4 nav-dropdown">
-							<a href="#" class="w3-hover-black">Ongoing Projects</a>
-							<a href="#" class="w3-hover-black">Completed Projects</a>
-						</div>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">Our Achievements</a>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">Tutorials</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="w3-hover-black">Members</a>
-						<div class="drop-2 w3-dropdown-content w3-card-4 nav-dropdown">
-					    	<a href="#" class="w3-hover-black">Active Members</a>
-					    	<a href="#" class="w3-hover-black">Alumni</a>
-					    </div>
-					</li>
-					<li>
-						<a href="#" class="w3-hover-black">Support Us!</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+{% extends 'mainsite/base.html' %}
+{% block content %}
 
 		<div id="side-nav" class="w3-container">
 			<div class="w3-container">
@@ -73,7 +11,7 @@
 		<! about us?>
 		<div id="about-us" class="w3-container">
 			<div id="about-us-p" class="w3-card-4 w3-container">
-				<h3 class="w3-center">About Us</h3>	
+				<h3 class="w3-center">About Us</h3>
 				<p>Bullshit for Testing - I once knew this guy in Mountain View, Silicon Valley that was a computer System Admin for the company I was consulting at. Super smart and nice, he was always confident and knew how to fix problems.
 
 				His only issue was, he was always out on call and I had to page him when I needed him. 30 minutes later, he would turn up and fix the problem. This goes on for a few months, until one day I go to call him and find out he is no longer working there.
@@ -81,11 +19,11 @@
 				I asked around to find out what happened to him and it turns out, he had been holding down 2 full time jobs at the same time. He had worked at the company I was at, and another similar one a short distance away simultaneously. He was earning 2 full time salaries, both System Admin positions, working a 40hr week, 9–5, Mon-Fri for 2 companies at the same time, charging twice for the same hour. Both companies he worked for were just a few blocks apart and he had pagers and phones for both jobs. He constantly ran backwards and forwards between the 2 companies and had gotten away for it for years.
 
 				It wasn’t until his boss was visiting his friend at the other company for lunch, saw him sitting at another desk, that he was found out. I was impressed. Up until he got caught, he was keeping both bosses happy. Even though he was no longer working there, he ended up being a hero in the eyes of the other engineers, just for the having the balls to do something so bold.
-				- Bullshit for Testing	
+				- Bullshit for Testing
 				</p>
 			</div>
 
-			<div id="about-us-img" class="w3-container">	
+			<div id="about-us-img" class="w3-container">
 				<div id="members" class="w3-container pic-btn">
 					<h5 class="w3-center">Our Members</h5>
 					<div class="w3-container w3-row-padding">
@@ -138,32 +76,4 @@
 		</div>
 
 
-		
-
-		<!footer>
-		<footer id="foot" class="w3-row-padding">
-			<div class="w3-col s6 w3-container">
-				<h5>For Nerds</h5>
-				<p>
-					Website powered by Django<br>
-					Languages Used: HTML and CSS as usual, animations in javascript.<br>
-					Libraries Used: <a href="#">Bootstrap</a>, <a href="http://www.w3schools.com/w3css/">W3CSS(A Bootstrap alternative)</a>, <a href="https://jquery.com/">JQuery</a>.<br>
-					This site is totally hard-coded by our Robotics Club Team.<br>
-					<a href="#">Meet the developers</a>
-				</p>
-			</div>
-			<div class="w3-col s6 w3-container">
-				<div class="w3-right">
-					<h5>Find us at</h5>
-					<a id="logo"href="https://www.facebook.com/roboism/"><img src="/static/fb.png"></a>
-					<a href=""><img src="#"></a>
-				</div>
-			</div>
-		</footer>
-
-		<script type="text/javascript">
-			$("#about-us-p").backstretch("/static/robotic-arm.JPG");
-		</script>
-	</body>
-
-</html>
+{% endblock %}
