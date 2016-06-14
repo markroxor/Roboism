@@ -1,15 +1,8 @@
 {% extends 'mainsite/base.html' %}
 {% block content %}
-        <script type="text/javascript" src="/static/slideshow-animation.js" ></script>
 		<!slideshow>
 		<div id="slideshow" class="w3-container">
 			<div id="slides" class="w3-container">
-				<img class="slide-pics" src="/static/img_1.jpg">
-				<img class="slide-pics" src="/static/img_2.jpg">
-				<img class="slide-pics" src="/static/img_3.jpg">
-				<img class="slide-pics" src="/static/img_4.jpg">
-				<img class="slide-pics" src="/static/img_5.jpg">
-
 				<div class="w3-section w3-center w3-large w3-text-white w3-display-bottomleft" style="width:100%;">
 					<div class="w3-left w3-padding-left w3-hover-text-black arrows" onclick="Image(-1)">&#10094;</div>
 	    			<div class="w3-right w3-padding-right w3-hover-text-black arrows" onclick="Image(1)">&#10095;</div>
@@ -40,9 +33,10 @@
 		<div id="news" class="w3-container">
 			<h3 class="w3-center">News and Updates</h3>
 			<div id="news-box">
-				<button id="btn-left" class="w3-btn-floating" style="left:0" onclick="nextNews()"><</button>
-				<button id="btn-right" class="w3-btn-floating" style="right:0" onclick="prevNews()">></button>
+				<button id="btn-left" class="w3-btn-floating" style="left:0" onclick="nextNews()">&#10094;</button>
+				<button id="btn-right" class="w3-btn-floating" style="right:0" onclick="prevNews()">&#10095;</button>
 			</div>
 		</div>
+		<script type="text/javascript" src="/static/slideshow-animation.js" ></script>
 
 {% endblock %}

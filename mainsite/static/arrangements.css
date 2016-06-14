@@ -18,8 +18,8 @@
 #slideshow{
 	position: relative;
 	margin-top: 50px;
-	padding-right: 10%;
-	padding-left: 10%;
+	margin-right: 15%;
+	margin-left: 15%;
 	height: 700px;
 }
 
@@ -50,8 +50,8 @@
 
 #news{
 	position: relative;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 20%;
+	margin-right: 20%;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	height: 500px;
@@ -118,7 +118,13 @@
 
 #member-info{
 	position: relative;
-	padding-right: 10%;
-	padding-left: 10%;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+#member-classify{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
 }
 

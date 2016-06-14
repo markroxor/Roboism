@@ -37,11 +37,6 @@ footer p a{
 
 /* about us */
 
-
-.backstretch img{
-	opacity: 0.25;
-}
-
 .pic{
     transition: all 1s ease-out;
 }
