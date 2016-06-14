@@ -1,5 +1,10 @@
 {% extends 'mainsite/base.html' %}
 {% block content %}
+		<style type="text/css">
+			.backstretch img{
+				opacity: 0.25;
+			}
+		</style>
 
 		<div id="side-nav" class="w3-container">
 			<div class="w3-container">
@@ -12,14 +17,19 @@
 		<div id="about-us" class="w3-container">
 			<div id="about-us-p" class="w3-card-4 w3-container">
 				<h3 class="w3-center">About Us</h3>
-				<p>Bullshit for Testing - I once knew this guy in Mountain View, Silicon Valley that was a computer System Admin for the company I was consulting at. Super smart and nice, he was always confident and knew how to fix problems.
-
-				His only issue was, he was always out on call and I had to page him when I needed him. 30 minutes later, he would turn up and fix the problem. This goes on for a few months, until one day I go to call him and find out he is no longer working there.
-
-				I asked around to find out what happened to him and it turns out, he had been holding down 2 full time jobs at the same time. He had worked at the company I was at, and another similar one a short distance away simultaneously. He was earning 2 full time salaries, both System Admin positions, working a 40hr week, 9–5, Mon-Fri for 2 companies at the same time, charging twice for the same hour. Both companies he worked for were just a few blocks apart and he had pagers and phones for both jobs. He constantly ran backwards and forwards between the 2 companies and had gotten away for it for years.
-
-				It wasn’t until his boss was visiting his friend at the other company for lunch, saw him sitting at another desk, that he was found out. I was impressed. Up until he got caught, he was keeping both bosses happy. Even though he was no longer working there, he ended up being a hero in the eyes of the other engineers, just for the having the balls to do something so bold.
-				- Bullshit for Testing
+				<div class="w3-container">
+					<h5>Who are we ?</h5>
+					<p>
+						The Robotics Club, IIT Dhanbad is an official society under the Cyber Society of IIT Dhanbad, and is an active cell for activities and projects related to robotics in the campus. We offer guidance, conduct workshops and tutorials along with providing tools, equipments, components and workspace.<br><br>
+					</p>
+				</div>
+				<div class="w3-container">
+					<h5>What do we do ?</h5>
+					<p>
+						The Robotics Club, IIT-ISM Dhanbad strive to our utmost to spread awareness and develop interest in the field of robotics and even pursue it as a field for further studies and research. We are involved in various programs in the field of robotics throughout the year. Our aim is to spread the culture of robotics within the college as well as impart knowledge about robotics to the students studying in the various other schools and colleges of Dhanbad.<br>
+				 		We work together as a dedicated team to learn from one another and motivate one another towards achieving our pre set goals for every academic year. We believe that working in a disciplined and planned manner helps increase our output and empowers us to take the club forward towards its full potential. The club serves as an active platform for students to develop and display their skill and aptitude in developing various kinds of robots.
+					</p>
+				</div>
 				</p>
 			</div>
 
@@ -75,5 +85,7 @@
 			</div>
 		</div>
 
-
+		<script type="text/javascript">
+			$("#about-us-p").backstretch("/static/robotic-arm.jpg");
+		</script>
 {% endblock %}
