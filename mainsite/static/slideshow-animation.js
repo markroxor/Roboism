@@ -27,5 +27,5 @@ function Image(n){
 
 function slideshow(){
   Image(1);
-  setTimeout(slideshow, 3000);
+  setTimeout(slideshow, 3000);  
 }

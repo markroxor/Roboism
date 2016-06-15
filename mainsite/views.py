@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Member
+from django.http import HttpResponse
 
 def index(request):
     return render(request, 'mainsite/frontpage.html', {})
@@ -10,7 +12,25 @@ def achievements(request):
 	return render(request, 'mainsite/achievements.html', {})
 
 def members(request):
-	return render(request, 'mainsite/members.html', {})
+	member = Member.objects.filter()
+	class Count:
+		first = second = third = fourth = alumni = 0
+		
+	count = Count()
+	for m in member:
+			if m.active == False:
+				count.alumni += 1
+			else:
+				if m.year == "First Year":
+					count.first += 1
+				elif m.year == "Second Year":
+					count.second += 1
+				elif m.year == "Third Year":
+					count.third += 1
+				elif m.year == "Final Year":
+					count.fourth += 1
+
+	return render(request, 'mainsite/members.html', {"count":count})
 
 def our_projects(request):
 	return render(request, 'mainsite/our-projects.html', {})
@@ -22,10 +42,12 @@ def support_us(request):
 	return render(request, 'mainsite/support-us.html', {})
 
 def alumni(request):
-	return render(request, 'mainsite/alumni.html', {})
+	member = Member.objects.filter(active = False)
+	return render(request, 'mainsite/alumni.html', {'member':member})
 
 def active_members(request):
-	return render(request, 'mainsite/active-members.html', {})
+	member = Member.objects.filter(active = True)
+	return render(request, 'mainsite/active-members.html', {'member':member})
 
 def ongoing_projects(request):
 	return render(request, 'mainsite/ongoing-projects.html', {})

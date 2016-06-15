@@ -1,9 +1,51 @@
 {% extends 'mainsite/base.html' %}
 {% block content %}
 
-		<! what? not decided yet!>
-		<div style="padding-top:400px; padding-bottom:400px;">
-			<h1>Under Construction!</h1>
+		<div id="heading" class="w3-container" style="padding-top:50px;">
+			<h3 class="w3-center">Alumni Member's of RoboISM</h3>
+		</div>
+		<div id="alumni" class="year w3-container">
+			<h4 class="w3-center">Alumni Member's</h4>
+			{% for m in member %}
+			{% if m.active == False %}
+				<div class="w3-container w3-row-padding w3-card-4 student">
+					<div class="w3-container w3-col s3">
+						<img src="{{ m.pic.url }}">
+					</div>
+					<div class="w3-container w3-col s6">
+						<h5>{{ m.name }}</h5>
+						<p>Branch: {{m.branch}}</p>
+						<p>Mail Id: {{ m.email }}</p>
+						<p>Working/Studying in : {{ m.work }}</p>
+						<div class="w3-accordion">
+							<button class="w3-btn-block w3-left-align" onclick="open_bio();">About Me</button>
+							<div id="bio" class="w3-accordion-content">
+								<p>{{ m.bio }}</p>
+							</div>
+							<script type="text/javascript">
+								function open_bio() {
+								    var bio = document.getElementById("bio");
+								    var drop = document.getElementById("drop");
+								    if (bio.className.indexOf("w3-show") == -1){ 
+								        bio.className += " w3-show";
+								        bio.previousElementSibling.className += " w3-red";
+								    }
+								    else{ 
+								        bio.className = bio.className.replace(" w3-show", "");
+								        previousElementSibling.className = previousElementSibling.className.replace(" w3-red", "");
+								    }
+								}
+							</script>
+						</div>
+						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
+					</div>
+					<div class="w3-container w3-col s3">
+						<a href="#" alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+						<p style="padding-top:3px;">Download Resume <a id="download" href=""><i class="material-icons">file_download</i></a></p>
+					</div>
+				</div>
+			{% endif %}
+			{% endfor %}
 		</div>
 
 

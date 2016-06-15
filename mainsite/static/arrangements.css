@@ -8,6 +8,15 @@
 	padding-bottom: 20px;
 }
 
+.lg{
+	font-size: 15px;
+	margin: 0;
+}
+
+#login form{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
 
 
 /* Common */
@@ -126,5 +135,32 @@
 	position: relative;
 	padding-right: 20%;
 	padding-left: 20%;
+	padding-bottom: 20px;
+	padding-top: 50px;
 }
 
+#member-classify h4{
+	padding-bottom: 20px;
+}
+
+/* active members */
+
+.year{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.student{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#download{
+	position: relative;
+	top:5px;
+}
