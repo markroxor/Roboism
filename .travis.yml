@@ -1,14 +1,15 @@
 language: python
 python:
-  - "2.6"
   - "2.7"
+  - "2.7.6"
 env:
-  - DJANGO_VERSION=1.7.8
+  - DJANGO_VERSION=1.8.0
   - DJANGO_VERSION=1.8.2
   
 install:
-  - pip install -q Django==$DJANGO
-  - python setup.py -q install
+  - pip install Django==$DJANGO
+  
+script: python manage.py runserver
 
 notifications:
   email: false
