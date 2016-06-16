@@ -1,9 +1,23 @@
 {% extends 'mainsite/base.html' %}
 {% block content %}
 
-		<! what? not decided yet!>
-		<div style="padding-top:400px; padding-bottom:400px;">
-			<h1>Under Construction!</h1>
+		<div id="project-list" class="w3-container">
+			<h3 class="w3-center">Completed Projects</h3>
+			{% for p in project %}
+			<div id="project" class="w3-container w3-row-padding">
+				<div class="w3-col s3 w3-container">
+					<img src="#">
+				</div>
+				<div class="w3-col s6 w3-container">
+					<h5>{{ p.name }}</h5>
+					<p>{{ p.description }}</p>
+				</div>
+				<div class="w3-col s3 w3-container">
+					<p>Find it at Github: <a href="#"><img src="/static/github.png" alt="github" title="github"></a></p>
+				</div>
+				<hr class="fade"> 
+			</div>
+			{% endfor %}
 		</div>
 
 

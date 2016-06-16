@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Member
+from .models import Member, Project
 from django.http import HttpResponse
 
 def index(request):
@@ -33,7 +33,20 @@ def members(request):
 	return render(request, 'mainsite/members.html', {"count":count})
 
 def our_projects(request):
-	return render(request, 'mainsite/our-projects.html', {})
+	project = Project.objects.all()
+	class Count:
+		total = ongoing = completed = 0
+
+	count = Count()
+	for p in project:
+		if p.completed:
+			count.completed += 1
+		else:
+			count.ongoing += 1
+	count.total = count.completed + count.ongoing
+
+	return render(request, 'mainsite/our-projects.html', {'count':count})
+
 
 def tutorials(request):
 	return render(request, 'mainsite/tutorials.html', {})
@@ -50,7 +63,18 @@ def active_members(request):
 	return render(request, 'mainsite/active-members.html', {'member':member})
 
 def ongoing_projects(request):
-	return render(request, 'mainsite/ongoing-projects.html', {})
+	project = Project.objects.filter(completed=False)
+	return render(request, 'mainsite/ongoing-projects.html', {'project':project})
 
 def completed_projects(request):
-	return render(request, 'mainsite/completed-projects.html', {})
+	project = Project.objects.filter(completed=True)
+	return render(request, 'mainsite/completed-projects.html', {'project':project})
+
+def show_projects(request, user):
+	project = Project.objects.filter(user in contributer)
+	class User:
+		projects = project
+		name = Member.objects.filter(username=user).name
+
+	data = User()
+	return render(request, 'mainsite/show-projects.html', {'data':data})
