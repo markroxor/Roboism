@@ -8,6 +8,7 @@ env:
   
 install:
   - pip install django==$DJANGO_VERSION
+  - pip install Pillow
   
 script: python manage.py runserver
 
