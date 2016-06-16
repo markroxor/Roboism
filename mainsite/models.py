@@ -22,3 +22,17 @@ class Member(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Project(models.Model):
+    pic = models.ImageField(null=True)
+    name = models.CharField(default="Name", max_length=50)
+    description = models.TextField(default="Shitty Project")
+    github = models.URLField(null=True)
+    completed = models.BooleanField()
+
+    def __str__(self):
+        return self.name
+
+    def publish(self):
+        self.save()

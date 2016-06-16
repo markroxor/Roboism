@@ -119,6 +119,37 @@
 
 /* Our Projects */
 
+#project-info{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+#project-classify{
+	position: relative;
+	padding-bottom: 20px;
+	padding-top: 50px;
+}
+
+#project-classify a{
+	text-decoration: none;
+}
+
+/* completed projects */
+
+#project-list{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+#projects{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
 
 
 /* members */
@@ -140,6 +171,16 @@
 }
 
 #member-classify h4{
+	padding-bottom: 20px;
+}
+
+#member-search{
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+#first, #second, #third, #fourth{
+	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
