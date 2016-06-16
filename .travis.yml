@@ -10,6 +10,8 @@ install:
   - pip install -q Django==$DJANGO
   - python setup.py -q install
 
+notifications:
+  email: false
 #before_script:
 #  - "pep8 --exclude=migrations --ignore=E501,E225 src"
 #  - pyflakes -x W src
