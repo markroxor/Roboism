@@ -20,6 +20,12 @@ footer p a{
 	width:42px;	
 }
 
+hr.fade{
+	border: 0;
+	height:2px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 
 /* common */
 
@@ -36,11 +42,6 @@ footer p a{
 
 
 /* about us */
-
-
-.backstretch img{
-	opacity: 0.25;
-}
 
 .pic{
     transition: all 1s ease-out;
@@ -68,3 +69,23 @@ footer p a{
 	animation: movetext 1s ease-out forwards;
 }
 
+/* members */
+
+#member-classify a{
+	text-decoration: none;
+}
+
+#member-classify p{
+	font-size: 15px;
+	margin: 0;
+}
+
+/* active members */
+
+.year h5{
+	font-size: 18px;
+}
+
+.year p{
+	font-size: 15px;
+}
