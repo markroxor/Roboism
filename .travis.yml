@@ -4,11 +4,9 @@ python:
   - "2.7.6"
   
 install:
-  # - pip install django==$DJANGO_VERSION
-  # - pip install Pillow
   - pip install -r requirements.txt
 
-script: python manage.py test
+script: python manage.py migrate
 
 notifications:
   email: false
