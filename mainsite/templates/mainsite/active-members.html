@@ -25,11 +25,11 @@
 								function open_bio() {
 								    var bio = document.getElementById("bio");
 								    var drop = document.getElementById("drop");
-								    if (bio.className.indexOf("w3-show") == -1){ 
+								    if (bio.className.indexOf("w3-show") == -1){
 								        bio.className += " w3-show";
 								        bio.previousElementSibling.className += " w3-red";
 								    }
-								    else{ 
+								    else{
 								        bio.className = bio.className.replace(" w3-show", "");
 								        previousElementSibling.className = previousElementSibling.className.replace(" w3-red", "");
 								    }
@@ -68,11 +68,11 @@
 								function open_bio() {
 								    var bio = document.getElementById("bio");
 								    var drop = document.getElementById("drop");
-								    if (bio.className.indexOf("w3-show") == -1){ 
+								    if (bio.className.indexOf("w3-show") == -1){
 								        bio.className += " w3-show";
 								        bio.previousElementSibling.className += " w3-red";
 								    }
-								    else{ 
+								    else{
 								        bio.className = bio.className.replace(" w3-show", "");
 								        previousElementSibling.className = previousElementSibling.className.replace(" w3-red", "");
 								    }
@@ -119,17 +119,17 @@
 			{% if m.year == "Final Year" %}
 				<div class="w3-container w3-row-padding w3-card-4 student">
 					<div class="w3-container w3-col s3">
-						<img src="{{ m.pic.url }}">
+						<img src=../../static/{{m.picFilename}} >
 					</div>
 					<div class="w3-container w3-col s6">
 						<h5>{{ m.name }}</h5>
 						<p>Branch: {{m.branch}}</p>
 						<p>{{ m.email }}</p>
-						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
+						<a href={{m.linkedin}}><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
 					</div>
 					<div class="w3-container w3-col s3">
-						<a href="#" alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
-						<p style="padding-top:3px;">Download Resume <a id="download" href=""><i class="material-icons">file_download</i></a></p>
+						<a href={{m.linkedin}} alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+						<p style="padding-top:3px;">Download Resume <a id="download" href=../../static/{{m.resumeFilename}} <i class="material-icons">file_download</i></a></p>
 					</div>
 				</div>
 			{% endif %}
