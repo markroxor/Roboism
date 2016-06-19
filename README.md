@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/markroxor/Roboism.svg?branch=master)](https://travis-ci.org/markroxor/Roboism)
 [![Dependency status](https://gemnasium.com/markroxor/Roboism.svg)](https://gemnasium.com/markroxor/Roboism)
 
-# RoboISM - Running at roboism.pythonanywhere.com
+## RoboISM - Running at roboism.pythonanywhere.com
 
 Issues to be sorted out -
 

@@ -1,0 +1,23 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+
+<div class="w3-container w3-row-padding w3-card-4 student">
+  <div class="w3-container w3-col s3">
+    <img src=../../static/{{him.picFilename}} >
+  </div>
+  <div class="w3-container w3-col s6">
+    <h5>{{ him.name }}</h5>
+    <p>Branch: {{him.branch}}</p>
+    <p>{{ him.email }}</p>
+    <a href={{him.linkedin}} alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+    <p style="padding-top:3px;">Download Resume <a id="download" href=../../static/{{him.resumeFilename}} <i class="material-icons">file_download</i></a></p>
+
+    <a href={{m.linkedin}}><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ him.name }}</button></a>
+  </div>
+  <!-- <div class="w3-container w3-col s3">
+  </div> -->
+</div>
+<!-- {{  form.as_p }} -->
+				</div>
+
+{% endblock %}

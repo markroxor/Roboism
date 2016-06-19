@@ -21,21 +21,17 @@ class Member(models.Model):
     resume = models.FileField(null=True,upload_to='./mainsite/static')
     active = models.BooleanField()
 
-    # resume.name="pop"
-    # os.path.basename(resume.name)
-
     def publish(self):
         self.save()
 
     def __str__(self):
         return self.name
 
-
     @property
     def resumeFilename(self,):
         return  os.path.basename(self.resume.name)
 
-    @property
+    # @property
     def picFilename(self,):
         return  os.path.basename(self.pic.name)
 

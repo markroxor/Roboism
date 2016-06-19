@@ -14,10 +14,17 @@ footer p a{
 }
 
 #logo img{
-	border: 3px solid white;
-	border-radius:50%;
-	height:42px;
-	width:42px;	
+	/*border: 3px solid white;
+	border-radius:70%;*/
+	height:30px;
+	width:30px;
+}
+
+#cup img{
+  position: relative;;
+  bottom: 2px;
+	height:20px;
+	width:20px;
 }
 
 hr.fade{

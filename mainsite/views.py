@@ -40,6 +40,15 @@ def logout_page(request):
     return HttpResponseRedirect('/')
 
 @login_required
+def userprofile(request):
+    form = profileForm()
+    member = Member.objects.filter()
+    for m in member:
+        if m.username==request.user.username:
+            return render(request, 'mainsite/profile.html', {'form':form,'him':m})
+
+    return render(request, 'mainsite/404.html', {})
+
 def index(request):
     return render_to_response(
     'mainsite/frontpage.html',
