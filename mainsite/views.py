@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Member, Project
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -7,7 +7,10 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
+from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 from .forms import *
+
 @csrf_protect
 def register(request):
     if request.method == 'POST':
@@ -21,39 +24,27 @@ def register(request):
             return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()
-    variables = RequestContext(request, {
-    'form': form
-    })
 
-    return render_to_response(
-    'registration/register.html',
-    variables,
-    )
+    return render(request, 'registration/register.html', {'form':form})
 
 def register_success(request):
-    return render_to_response(
-    'registration/success.html',
-    )
+    return render_to_response('registration/fill_info.html',)
 
+@login_required
 def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/')
 
 @login_required
 def userprofile(request):
-    form = profileForm()
-    member = Member.objects.filter()
-    for m in member:
-        if m.username==request.user.username:
-            return render(request, 'mainsite/profile.html', {'form':form,'him':m})
-
-    return render(request, 'mainsite/404.html', {})
+    try:
+    	member = Member.objects.get(username=request.user.username)
+    	return render(request, 'mainsite/profile.html', {'member':member})
+    except ObjectDoesNotExist:
+    	return render(request, 'mainsite/404.html', {})
 
 def index(request):
-    return render_to_response(
-    'mainsite/frontpage.html',
-    { 'user': request.user }
-    )
+    return render(request, 'mainsite/frontpage.html', {'user': request.user })
 
 def about_us(request):
 	return render(request, 'mainsite/about-us.html', {})
@@ -120,11 +111,27 @@ def completed_projects(request):
 	project = Project.objects.filter(completed=True)
 	return render(request, 'mainsite/completed-projects.html', {'project':project})
 
-def show_projects(request, user):
-	project = Project.objects.filter(user in contributer)
-	class User:
-		projects = project
-		name = Member.objects.filter(username=user).name
-
-	data = User()
-	return render(request, 'mainsite/show-projects.html', {'data':data})
+def fill_info(request):
+	if request.method == 'POST':
+		details = MemberForm(request.POST)
+		if details.is_valid():
+			member = details.save(commit=false)
+			member.username = request.user.username
+			member.password1 = request.user.password1
+			member.password2 = member.password1
+			member.email = request.user.email
+			member.pic = details.cleaned_data['pic']
+			member.name = details.cleaned_data['name']
+			member.branch = details.cleaned_data['branch']
+			member.work = details.cleaned_data['work']
+			member.DOB = details.cleaned_data['DOB']
+			member.year = details.cleaned_data['year']
+			member.bio = details.cleaned_data['bio']
+			member.linkedin = details.cleaned_data['linkedin']
+			member.resume = details.cleaned_data['resume']
+			member.active = details.cleaned_data['active']
+			member.save()
+			return HttpResponseRedirect('/profile/')
+	else:
+		form = MemberForm()
+	return render(request, 'registration/fill_info.html', {'details':details })

@@ -6,6 +6,9 @@ from .models import Member
 
 class RegistrationForm(forms.Form):
 
+#    class Meta:
+ #       model = Member
+ #       fields = ('username','password','email')
     username = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Username"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
     email = forms.EmailField(widget=forms.TextInput(attrs=dict(required=True, max_length=30)), label=_("Email address"))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs=dict(required=True, max_length=30, render_value=False)), label=_("Password"))
@@ -24,7 +27,11 @@ class RegistrationForm(forms.Form):
                 raise forms.ValidationError(_("The two password fields did not match."))
         return self.cleaned_data
 
-class profileForm(forms.ModelForm):
+
+class MemberForm(forms.Form):
     class Meta:
         model = Member
-        fields = ('pic','username','name','email','branch','work','linkedin','resume')
+        fields = ('username', 'password', 'name', 'email',)
+
+    
+

@@ -1,0 +1,16 @@
+{% extends "registration/base.html" %}
+{% block title %}Registration Successful{% endblock %}
+{% block head %}
+ Registration Completed Successfully
+{% endblock %}
+{% block content %}
+   
+	<div class="w3-container">
+		<h1>New post</h1>
+		<form method="POST" class="post-form">{% csrf_token %}
+			{{ details.as_p }}
+		<button type="submit" class="save w3-btn w3-round-xlarge">Save</button>
+		</form>
+	</div>
+
+{% endblock %}

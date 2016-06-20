@@ -31,7 +31,7 @@ class Member(models.Model):
     def resumeFilename(self,):
         return  os.path.basename(self.resume.name)
 
-    # @property
+    @property
     def picFilename(self,):
         return  os.path.basename(self.pic.name)
 

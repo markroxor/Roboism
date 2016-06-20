@@ -19,5 +19,4 @@ urlpatterns = [
     url(r'^register/$', views.register),
     url(r'^userprofile/$', views.userprofile,name='userprofile'),
     url(r'^register/success/$', views.register_success),
-    #url(r'^$', home, name='home'),
 ]
