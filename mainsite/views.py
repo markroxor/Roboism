@@ -115,23 +115,23 @@ def fill_info(request):
 	if request.method == 'POST':
 		details = MemberForm(request.POST)
 		if details.is_valid():
-			member = details.save(commit=false)
-			member.username = request.user.username
-			member.password1 = request.user.password1
-			member.password2 = member.password1
-			member.email = request.user.email
-			member.pic = details.cleaned_data['pic']
-			member.name = details.cleaned_data['name']
-			member.branch = details.cleaned_data['branch']
-			member.work = details.cleaned_data['work']
-			member.DOB = details.cleaned_data['DOB']
-			member.year = details.cleaned_data['year']
-			member.bio = details.cleaned_data['bio']
-			member.linkedin = details.cleaned_data['linkedin']
-			member.resume = details.cleaned_data['resume']
-			member.active = details.cleaned_data['active']
+			member = details.save(commit=False)
+			# member.username = request.user.username
+			# member.password = request.user.password
+			# member.password2 = member.password
+			# member.email = request.user.email
+			# member.pic = details.cleaned_data['pic']
+			# member.name = details.cleaned_data['name']
+			# member.branch = details.cleaned_data['branch']
+			# member.work = details.cleaned_data['work']
+			# member.DOB = details.cleaned_data['DOB']
+			# member.year = details.cleaned_data['year']
+			# member.bio = details.cleaned_data['bio']
+			# member.linkedin = details.cleaned_data['linkedin']
+			# member.resume = details.cleaned_data['resume']
+			# member.active = details.cleaned_data['active']
 			member.save()
-			return HttpResponseRedirect('/profile/')
+			return HttpResponseRedirect('/userprofile/')
 	else:
 		details = MemberForm()
 	return render(request, 'registration/fill_info.html', {'details':details })

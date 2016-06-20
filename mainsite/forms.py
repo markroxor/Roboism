@@ -31,4 +31,4 @@ class RegistrationForm(forms.Form):
 class MemberForm(forms.ModelForm):
     class Meta:
         model = Member
-        fields = ('username', 'password', 'name', 'email',)
+        fields = ('username', 'password', 'name', 'email','active')

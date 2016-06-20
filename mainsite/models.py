@@ -7,16 +7,16 @@ from django import template
 register = template.Library()
 
 class Member(models.Model):
-    pic = models.ImageField(upload_to='./mainsite/static/')
+    pic = models.ImageField(upload_to='./mainsite/static/',null=True)
     username = models.CharField(default="Username", max_length=20)
     password = models.CharField(default="Password" ,max_length=20)
     name = models.CharField(default="Name", max_length=50)
     email = models.EmailField(default="e-mail")
-    branch = models.CharField(default="Branch", max_length=50)
-    work = models.CharField(default="Company/University", max_length=50)
-    DOB = models.DateField(default=timezone.now());
-    year = models.CharField(default="Year", max_length=12)
-    bio = models.TextField(default="Lorem ipsum sit dolot fuck this shit !")
+    branch = models.CharField(default="Branch", max_length=50,null=True)
+    work = models.CharField(default="Company/University", max_length=50,null=True)
+    DOB = models.DateField(default=timezone.now(),null=True);
+    year = models.CharField(default="Year", max_length=12,null=True)
+    bio = models.TextField(default="Lorem ipsum sit dolot fuck this shit !",null=True)
     linkedin = models.URLField(null=True)
     resume = models.FileField(null=True,upload_to='./mainsite/static')
     active = models.BooleanField()
