@@ -28,10 +28,7 @@ class RegistrationForm(forms.Form):
         return self.cleaned_data
 
 
-class MemberForm(forms.Form):
+class MemberForm(forms.ModelForm):
     class Meta:
         model = Member
         fields = ('username', 'password', 'name', 'email',)
-
-    
-

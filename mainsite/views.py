@@ -133,5 +133,5 @@ def fill_info(request):
 			member.save()
 			return HttpResponseRedirect('/profile/')
 	else:
-		form = MemberForm()
+		details = MemberForm()
 	return render(request, 'registration/fill_info.html', {'details':details })
