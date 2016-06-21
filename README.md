@@ -7,6 +7,9 @@
 
 * Go to templates -> active-members.html, there find div class="W3-accordion". Problem is that individual accordion for bio of each member cannot be opened. If clicked, only opens first bio. Please sort it out as soon as possible.
 
+* ~~Profile pic of member's is not showing due to dynamic url in img src="{{ ? }}" is not correct. Please sort it out as soon as possible. Same problem with resume download.~~
+
+
 
 * In [fill_info.py](https://github.com/markroxor/Roboism/blob/master/mainsite/templates/registration/fill_info.html), I have styled it using CSS and Django. (See styling classes [here](https://github.com/markroxor/Roboism/blob/master/mainsite/forms.py) ) I want the names and fill boxes under each other, like
 
