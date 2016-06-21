@@ -21,14 +21,37 @@ def register(request):
             password=form.cleaned_data['password1'],
             email=form.cleaned_data['email']
             )
-            return HttpResponseRedirect('/register/fill_info/')
+            return HttpResponseRedirect('/register/success/')
     else:
         form = RegistrationForm()
+    variables = RequestContext(request, {
+    'form': form
+    })
 
-    return render(request, 'registration/fill_info.html', {'form':form})
+    return render_to_response(
+    'registration/fill_info.html',
+    variables,
+    )
+
+# @csrf_protect
+# def register(request):
+#     if request.method == 'POST':
+#         form = RegistrationForm(request.POST)
+#         if form.is_valid():
+#             user = User.objects.create_user(
+#             username=form.cleaned_data['username'],
+#             password=form.cleaned_data['password1'],
+#             email=form.cleaned_data['email']
+#             )
+#             return HttpResponseRedirect('/register/fill_info/')
+#     else:
+#         form = RegistrationForm()
+#
+#     return render(request, 'registration/fill_info.html', {'form':form})
+#
 
 def success(request):
-	return render(request, 'success.html', {})
+	return render(request, 'registration/success.html', {})
 
 @login_required
 def logout_page(request):
@@ -131,7 +154,8 @@ def fill_info(request):
 			if request.user.is_authenticated():
 				member.username = request.user.username
 			member.save()
-			return HttpResponseRedirect('/register/success/')
+
+			return HttpResponseRedirect('/profile/')
 	else:
 		details = MemberForm()
 	return render(request, 'registration/fill_info.html', {'details': details})

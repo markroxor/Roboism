@@ -4,7 +4,7 @@
 {% block content %}
     <form id="register" class="w3-container" method="post" action=".">{% csrf_token %}
         <table border="0">
-            {{ form.as_p }}
+            {{ form.as_table }}
         </table>
         <input class="w3-btn w3-round-xxlarge w3-blue" type="submit" value="Register" />
     </form>
