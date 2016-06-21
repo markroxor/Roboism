@@ -205,3 +205,18 @@
 	position: relative;
 	top:5px;
 }
+
+/* registration */
+
+#registration{
+	position: relative;
+	padding-top: 200px;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-bottom: 200px;
+}
+
+#login label, input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
