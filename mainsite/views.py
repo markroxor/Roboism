@@ -25,7 +25,7 @@ def register(request):
     else:
         form = RegistrationForm()
     variables = RequestContext(request, {
-    'form': form
+    'details': form
     })
 
     return render_to_response(
