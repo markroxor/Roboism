@@ -10,7 +10,7 @@
 
 * In [fill_info.py](https://github.com/markroxor/Roboism/blob/master/mainsite/templates/registration/fill_info.html), I have styled it using CSS and Django. (See styling classes [here](https://github.com/markroxor/Roboism/blob/master/mainsite/forms.py) ) I want the names and fill boxes under each other, like
 
-  Name: 
+  Name: <br>
   [ fill box  ]
   
   Not like
