@@ -29,33 +29,33 @@
 			<div id= "nav-bar" class="w3-right">
 				<ul class="w3-navbar">
 					<li>
-						<a href="/" class="w3-hover-black w3-red">Home</a>
+						<a id="_home" href="/" class="w3-hover-black">Home</a>
 					</li>
 					<li>
-						<a href="/about-us" class="w3-hover-black">About Us</a>
+						<a id="_about" href="/about-us" class="w3-hover-black">About Us</a>
 					</li>
 					<li class="dropdown">
-						<a href="/projects" class="w3-hover-black">Our Projects</a>
+						<a id="_projects" href="/projects" class="w3-hover-black">Our Projects</a>
 						<div class="drop-1 w3-dropdown-content w3-card-4 nav-dropdown">
 							<a href="/projects/ongoing" class="w3-hover-black">Ongoing Projects</a>
 							<a href="/projects/completed" class="w3-hover-black">Completed Projects</a>
 						</div>
 					</li>
 					<li>
-						<a href="/achievements" class="w3-hover-black">Our Achievements</a>
+						<a id="_achievements" href="/achievements" class="w3-hover-black">Our Achievements</a>
 					</li>
 					<li>
-						<a href="/tutorials" class="w3-hover-black">Tutorials</a>
+						<a id="_tutorials" href="/tutorials" class="w3-hover-black">Tutorials</a>
 					</li>
 					<li class="dropdown">
-						<a href="/members" class="w3-hover-black">Members</a>
+						<a id="_members" href="/members" class="w3-hover-black">Members</a>
 						<div class="drop-2 w3-dropdown-content w3-card-4 nav-dropdown">
 					    	<a href="/members/active" class="w3-hover-black">Active Members</a>
 					    	<a href="/members/alumni" class="w3-hover-black">Alumni</a>
 					    </div>
 					</li>
 					<li>
-						<a href="/support-us" class="w3-hover-black">Support Us!</a>
+						<a id="_support" href="/support-us" class="w3-hover-black">Support Us!</a>
 					</li>
 					<li>
 						{% if not member %}
