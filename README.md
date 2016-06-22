@@ -9,7 +9,7 @@ RoboISM is the official site of Robotics Club ISM Dhanbad. Well right now it is 
 
 ####Who can Contribute ?
 
-* Strictly Homo Sapiens Sapines, Extraterristrials like Martians, Reptillians, Grey Aliens etc, Spongbob, Octopus or any goddamn creature who aims to improve our website. 
+* Strictly Homo Sapiens Sapines, Extraterristrials like Martians, Reptillians, Grey Aliens etc, Spongbob, Octopus or any creature who aims to improve our website. 
 
 ####How to Contribute?
 
