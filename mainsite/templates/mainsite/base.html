@@ -68,10 +68,10 @@
 						<a id="_support" href="/support-us" class="w3-hover-black">Support Us!</a>
 					</li>
 					<li>
-						{% if not member %}
+						{% if not name %}
 								<a href="/login" class="w3-hover-black">Login</a>
 						{% else %}
-							<a>Hello {{ member.name }}!</a>
+							<a>Hello {{ name }}!</a>
 							<a href="/logout/">Logout</a>
 							<a href="/userprofile/">Profile</a>
 

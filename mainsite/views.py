@@ -10,8 +10,8 @@ from django.template import RequestContext
 from django.contrib.auth.models import User
 from .forms import *
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+from django.contrib.auth import authenticate, login
 
-@csrf_protect
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -21,34 +21,20 @@ def register(request):
             password=form.cleaned_data['password1'],
             email=form.cleaned_data['email']
             )
+            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'])
+            login(request, user)
             return HttpResponseRedirect('/register/fill_info/')
     else:
         form = RegistrationForm()
     variables = RequestContext(request, {
-    'details': form
+    'form': form
     })
-
+ 
     return render_to_response(
-    'registration/fill_info.html',
+    'registration/register.html',
     variables,
     )
 
-# @csrf_protect
-# def register(request):
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         if form.is_valid():
-#             user = User.objects.create_user(
-#             username=form.cleaned_data['username'],
-#             password=form.cleaned_data['password1'],
-#             email=form.cleaned_data['email']
-#             )
-#             return HttpResponseRedirect('/register/fill_info/')
-#     else:
-#         form = RegistrationForm()
-#
-#     return render(request, 'registration/fill_info.html', {'form':form})
-#
 
 def success(request):
 	return render(request, 'registration/success.html', {})
@@ -60,7 +46,7 @@ def logout_page(request):
 
 @login_required
 def userprofile(request):
-	if request.user.is_authenticated():
+	if request.user.is_authenticated:
 	    try:
 	    	member = Member.objects.get(username=request.user.username)
 	    	return render(request, 'mainsite/profile.html', {'member':member})
@@ -71,15 +57,12 @@ def userprofile(request):
 
 
 def index(request):
-	if request.user.is_authenticated():
-		try:
-			member = Member.objects.get(username=request.user.username)
-			return render(request, 'mainsite/frontpage.html', {'member':member})
-		except:
-			logout(request)
-			return render(request, 'mainsite/frontpage.html', {})
+	if request.user.is_authenticated:
+		name = request.user.username
+		return render(request, 'mainsite/index.html', {'name': name})
 	else:
-		return render(request, 'mainsite/frontpage.html', {})
+		return render(request, 'mainsite/index.html', {})	
+	
 
 def about_us(request):
 	return render(request, 'mainsite/about-us.html', {})
@@ -151,11 +134,11 @@ def fill_info(request):
 		details = MemberForm(request.POST)
 		if details.is_valid():
 			member = details.save(commit=False)
-			if request.user.is_authenticated():
+			if request.user.is_authenticated:
 				member.username = request.user.username
 			member.save()
 
-			return HttpResponseRedirect('/profile/')
+			return HttpResponseRedirect('/register/success')
 	else:
 		details = MemberForm()
 	return render(request, 'registration/fill_info.html', {'details': details})
