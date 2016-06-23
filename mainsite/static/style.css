@@ -14,8 +14,8 @@ footer p a{
 }
 
 #logo img{
-	/*border: 3px solid white;
-	border-radius:70%;*/
+	border: 3px solid white;
+	border-radius:70%;
 	height:30px;
 	width:30px;
 }
@@ -96,3 +96,12 @@ hr.fade{
 .year p{
 	font-size: 15px;
 }
+
+#nav-bar li{
+	background-color:#000000;
+	opacity:0.7;
+}
+#nav-bar li{
+	color:#FFFFFF;
+}
+

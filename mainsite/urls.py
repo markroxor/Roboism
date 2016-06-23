@@ -15,7 +15,7 @@ urlpatterns = [
 	url(r'^projects/completed/$', views.completed_projects, name='completed_projects'),
     url(r'^login/', 'django.contrib.auth.views.login'),
     url(r'^logout/$', views.logout_page),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    #url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^register/$', views.register),
     url(r'^userprofile/$', views.userprofile, name='userprofile'),
     url(r'^register/success/$', views.success, name='success'),

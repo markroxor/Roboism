@@ -5,8 +5,8 @@
 		<title>RoboISM</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="/static/w3css.css">
-		<link rel="stylesheet" type="text/css" href="/static/arrangements.css">
-		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<link rel="stylesheet" type="text/css" href="/static/arrangement.css">
+		<link rel="stylesheet" type="text/css" href="/static/styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -14,6 +14,16 @@
 		<script type="text/javascript" src="/static/dropdown-animation.js"></script>
 		<link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="/static/login.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			 	$("#nav-bar li").mouseenter(function(){		
+ 					$(this).css("opacity","1");
+ 				});
+ 				$("#nav-bar li").mouseleave(function(){
+ 					$(this).css("opacity","0.7");			
+ 				});
+ 			});
+		</script>
 	</head>
 
 	<body>
@@ -36,7 +46,7 @@
 					</li>
 					<li class="dropdown">
 						<a id="_projects" href="/projects" class="w3-hover-black">Our Projects</a>
-						<div class="drop-1 w3-dropdown-content w3-card-4 nav-dropdown">
+						<div class="w3-dropdown-content w3-card-4 nav-dropdown">
 							<a href="/projects/ongoing" class="w3-hover-black">Ongoing Projects</a>
 							<a href="/projects/completed" class="w3-hover-black">Completed Projects</a>
 						</div>
@@ -49,7 +59,7 @@
 					</li>
 					<li class="dropdown">
 						<a id="_members" href="/members" class="w3-hover-black">Members</a>
-						<div class="drop-2 w3-dropdown-content w3-card-4 nav-dropdown">
+						<div class="w3-dropdown-content w3-card-4 nav-dropdown">
 					    	<a href="/members/active" class="w3-hover-black">Active Members</a>
 					    	<a href="/members/alumni" class="w3-hover-black">Alumni</a>
 					    </div>
