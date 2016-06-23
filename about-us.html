@@ -1,0 +1,95 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+		<style type="text/css">
+			#_about{
+				background-color: rgb(255,0,0);
+				color: white;
+			}			
+			.backstretch img{
+				opacity: 0.25;
+			}
+		</style>
+
+		<div id="side-nav" class="w3-container">
+			<div class="w3-container">
+				<a href="#" class="w3-right" style="padding-left:20px";><img src="/static/arrow_right.png"></a>
+				<h4 class="w3-right">Our Projects</h4>
+			</div>
+		</div>
+
+		<! about us?>
+		<div id="about-us" class="w3-container">
+			<div id="about-us-p" class="w3-card-4 w3-container">
+				<h3 class="w3-center">About Us</h3>
+				<div class="w3-container">
+					<h5>Who are we ?</h5>
+					<p>
+						The Robotics Club, IIT Dhanbad is an official society under the Cyber Society of IIT Dhanbad, and is an active cell for activities and projects related to robotics in the campus. We offer guidance, conduct workshops and tutorials along with providing tools, equipments, components and workspace.<br><br>
+					</p>
+				</div>
+				<div class="w3-container">
+					<h5>What do we do ?</h5>
+					<p>
+						The Robotics Club, IIT-ISM Dhanbad strive to our utmost to spread awareness and develop interest in the field of robotics and even pursue it as a field for further studies and research. We are involved in various programs in the field of robotics throughout the year. Our aim is to spread the culture of robotics within the college as well as impart knowledge about robotics to the students studying in the various other schools and colleges of Dhanbad.<br>
+				 		We work together as a dedicated team to learn from one another and motivate one another towards achieving our pre set goals for every academic year. We believe that working in a disciplined and planned manner helps increase our output and empowers us to take the club forward towards its full potential. The club serves as an active platform for students to develop and display their skill and aptitude in developing various kinds of robots.
+					</p>
+				</div>
+				</p>
+			</div>
+
+			<div id="about-us-img" class="w3-container">
+				<div id="members" class="w3-container pic-btn">
+					<h5 class="w3-center">Our Members</h5>
+					<div class="w3-container w3-row-padding">
+						<div class="w3-col s6">
+							<div class="w3-container w3-left">
+								<a href="#" class="w3-center">
+									<img class="pic" src="/static/students.jpg">
+									<p class="pic-info">Active Members</p>
+								</a>
+							</div>
+						</div>
+						<div class="w3-col s6">
+							<div class="w3-container w3-right">
+								<a href="#" class="w3-center">
+									<img class="pic" src="/static/alumni.jpg">
+									<p class="pic-info">Alumni</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="projects" class="w3-container pic-btn">
+					<h5 class="w3-center">Our Projects</h5>
+					<div class="w3-container">
+						<a href="#" class="w3-center">
+							<img class = "pic" src="/static/projects.jpg">
+							<p class="pic-info">Projects</p>
+						</a>
+					</div>
+				</div>
+				<div id="achievements" class="w3-container pic-btn">
+					<h5 class="w3-center">Our Achievements</h5>
+					<div class="w3-container">
+						<a href="#" class="w3-center">
+							<img class = "pic" src="/static/trophy.jpg">
+							<p class="pic-info">Achievements</p>
+						</a>
+					</div>
+				</div>
+				<div id="tutorial" class="w3-container pic-btn">
+					<h5 class="w3-center">Tutorials</h5>
+					<div class="w3-container">
+						<a href="#" class="w3-center">
+							<img class = "pic" src="/static/tutorial.jpg">
+							<p class="pic-info">Tutorials</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$("#about-us-p").backstretch("/static/robotic-arm.jpg");
+		</script>
+{% endblock %}
