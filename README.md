@@ -1,40 +1,64 @@
 [![Build Status](https://travis-ci.org/markroxor/Roboism.svg?branch=master)](https://travis-ci.org/markroxor/Roboism)
 [![Dependency status](https://gemnasium.com/markroxor/Roboism.svg)](https://gemnasium.com/markroxor/Roboism)
 
-## RoboISM - Running at roboism.pythonanywhere.com
+## RoboISM - Running at [roboism.markroxor.in](roboism.markroxor.in)
 
-###Issues to be sorted out -
-
-* Go to templates -> active-members.html, there find div class="W3-accordion". Problem is that individual accordion for bio of each member cannot be opened. If clicked, only opens first bio. Please sort it out as soon as possible.
+RoboISM is the official site of Robotics Club ISM Dhanbad. Well right now it is ![alt tag](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQpNgHwfZ40zcRFx2AJ-17aoqeQF9xR53Ho-dPXPh7mku_uaETCjg)
 
 
-* In [fill_info.py](https://github.com/markroxor/Roboism/blob/master/mainsite/templates/registration/fill_info.html), I have styled it using CSS and Django. (See styling classes [here](https://github.com/markroxor/Roboism/blob/master/mainsite/forms.py) ) I want the names and fill boxes under each other, like
 
-  Name: <br>
-  [ fill box  ]
-  
-  Not like
-  
-  Name: [ fill box ]
+####Who can Contribute ?
 
-* User identification is creating problem. 
-```
-user = request.user.username 
-```
-seem to give different and unpredictable results of user on different occations, which is resulting in wrong identification of current logged in user. 
+* Strictly Homo Sapiens Sapines, Extraterristrials like Martians, Reptillians, Grey Aliens etc, Spongbob, Octopus or any creature who aims to improve our website. 
 
-```
-if request.method == 'POST':
-		details = MemberForm(request.POST)
-		if details.is_valid():
-			member = details.save(commit=False) 
-			if request.user.is_authenticated():
-				member.username = request.user.username // just here is problem
-			member.save()
-			return HttpResponseRedirect('/register/success/')
-	else:
-		details = MemberForm()
-	return render(request, 'registration/fill_info.html', {'details': details})
-```
-	
-See the whole code [here](https://github.com/markroxor/Roboism/blob/master/mainsite/views.py) of views.py.
+####How to Contribute?
+
+#####What to do? 
+* Keep your code clean and use meaningful variables.
+* Use occasional commenting if code is large
+* Try using CamelCase for naming functions or classes. 
+* Test your code locally before pushing
+* Give proper indentaion, use Tab instead of spacing, especially in html code.
+* Store all static files(.css, .js, images etc) in [mainsite/static/](https://github.com/markroxor/Roboism/blob/master/mainsite/static/)
+* All arrangement related stying(position, padding, margin), of html elements are to be in [mainsite/static/arrangements.css](https://github.com/markroxor/Roboism/blob/master/mainsite/static/arrangements.css) and all styles(like border, font) are to be in  [mainsite/static/style.css](https://github.com/markroxor/Roboism/blob/master/mainsite/static/style.css)
+
+#####What <b>not</b> to do?
+* No spagetti code
+* Don't complicate the code
+* Don't give lot of css/javascript code inside html, use seperate css/js files. One or two line is acceptable. 
+
+
+Follow the rules, bad code will be rejected, or modified and credit denied. Yes, we are evil :trollface:
+
+####For Newbies: How to run code locally ?
+* Clone your code into your PC. Let the folder name be Roboism. 
+* Install python 3 in your PC. Preferably in default directory (C:/)
+* delete Roboism/myvenv folder
+* Open Command Prompt and cd into the directory (Roboism). <br>
+  For Window Users:-
+  ```C:\Python34\python -m venv myvenv```<br>
+  For Linux Users and OS X Users:-
+  ```python 3 -m venv myvenv```<br>
+
+* Then do <br>
+  For Window Users:- ```myvenv\Scripts\activate```<br>
+  For Linux Users and OS X Users:-
+  ```source myvenv/bin/activate``` <br>
+  Now, you should see a (myvenv) script before cmd commands. <br>
+
+* Now, do
+  ```pip install django==1.9.7```
+
+* After installation is complete, do
+  ```python manage.py makemigration mainsite```
+  And 
+  ```python manage.py migrate mainsite```
+  And
+  ```python manage.py collectstatic```
+
+* Finally, to run a virtual server, do
+  ```python manage.py runserver```
+  Go to any browser, type this url '127.0.0.1:8000' without quotes. If everything went as planned, you will see the site locally. <br>
+  Make any changes the code and see the change reflected on the locally hosted site. 
+
+

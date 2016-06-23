@@ -1,0 +1,124 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+
+		<div id="heading" class="w3-container" style="padding-top:50px;">
+			<h3 class="w3-center">Active Member's of RoboISM</h3>
+		</div>
+		<div id="first-yr" class="year w3-container">
+			<h4 class="w3-center">First Year Member's</h4>
+			{% for m in member %}
+			{% if m.year == "First Year" %}
+				<div class="w3-container w3-row-padding w3-card-4 student">
+					<div class="w3-container w3-col s3">
+						<! image link>
+					</div>
+					<div class="w3-container w3-col s6">
+						<h5>{{ m.name }}</h5>
+						<p>Branch: {{m.branch}}</p>
+						<p>Mail Id: {{ m.email }}</p>
+						<div class="w3-accordion">
+				<!.......<button class="w3-btn-block w3-left-align w3-blue" onclick="open_bio();">
+							<button class="w3-btn-block w3-left-align w3-blue">About Me</button>
+							<div id="bio" class="w3-accordion-content">
+								<p>{{ m.bio }}</p>
+							</div>
+					
+						</div>
+						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
+					</div>
+					<div class="w3-container w3-col s3">
+						<a href="#" alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+						<p style="padding-top:3px;">Download Resume <a id="download" href=""><i class="material-icons">file_download</i></a></p>
+					</div>
+				</div>
+			{% endif %}
+			{% endfor %}
+			<hr class="fade">
+		</div>
+		<div id="second-yr" class="year w3-container">
+			<h4 class="w3-center">Second Year Member's</h4>
+			{% for m in member %}
+			{% if m.year == "Second Year" %}
+				<div class="w3-container w3-row-padding w3-card-4 student">
+					<div class="w3-container w3-col s3">
+						<!image link>
+					</div>
+					<div class="w3-container w3-col s6">
+						<h5>{{ m.name }}</h5>
+						<p>Branch: {{m.branch}}</p>
+						<p>Mail Id: {{ m.email }}</p>
+						<div class="w3-accordion">
+							<button class="w3-btn-block w3-left-align w3-blue">About Me</button>
+							<div id="bio" class="w3-accordion-content">
+								<p>{{ m.bio }}</p>
+							</div>
+						</div>
+						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
+					</div>
+					<div class="w3-container w3-col s3">
+						<a href="#" alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+						<p style="padding-top:3px;">Download Resume <a id="download" href=""><i class="material-icons">file_download</i></a></p>
+					</div>
+				</div>
+			{% endif %}
+			{% endfor %}
+
+			<hr class="fade">
+		</div>
+		<div id="third-yr" class="year w3-container">
+			<h4 class="w3-center">Third Year Member's</h4>
+			{% for m in member %}
+			{% if m.year == "Third Year" %}
+				<div class="w3-container w3-row-padding w3-card-4 student">
+					<div class="w3-container w3-col s3">
+						<! image link>
+					</div>
+					<div class="w3-container w3-col s6">
+						<h5>{{ m.name }}</h5>
+						<p>Branch: {{m.branch}}</p>
+						<p>Mail Id: {{ m.email }}</p>
+						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
+					</div>
+					<div class="w3-container w3-col s3">
+						<a href="#" alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+						<p style="padding-top:3px;">Download Resume <a id="download" href=""><i class="material-icons">file_download</i></a></p>
+					</div>
+				</div>
+			{% endif %}
+			{% endfor %}
+			<hr class="fade">
+		</div>
+		<div id="fourth-yr" class="year w3-container">
+			<h4 class="w3-center">Final Year Member's</h4>
+			{% for m in member %}
+			{% if m.year == "Final Year" %}
+				<div class="w3-container w3-row-padding w3-card-4 student">
+					<div class="w3-container w3-col s3">
+						<img src=../../static/{{m.picFilename}} >
+					</div>
+					<div class="w3-container w3-col s6">
+						<h5>{{ m.name }}</h5>
+						<p>Branch: {{m.branch}}</p>
+						<p>{{ m.email }}</p>
+						<a href={{m.linkedin}}><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
+					</div>
+					<div class="w3-container w3-col s3">
+						<a href={{m.linkedin}} alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
+						<p style="padding-top:3px;">Download Resume <a id="download" href=../../static/{{m.resumeFilename}} <i class="material-icons">file_download</i></a></p>
+					</div>
+				</div>
+			{% endif %}
+			{% endfor %}
+			<hr class="fade">
+		</div>
+		<script type="text/javascript">								
+			$(document).ready(function(){
+				$("div div div div").children("#bio").prev().click(function(){
+					$(this).toggleClass("w3-red");
+					$(this).next().toggleClass("w3-show");
+				});		
+				
+			});
+		</script>
+
+{% endblock %}
