@@ -50,7 +50,12 @@ def userprofile(request):
 	if request.user.is_authenticated:
 	    try:
 	    	member = Member.objects.get(username=request.user.username)
-	    	return render(request, 'mainsite/profile.html', {'member':member})
+        	if request.user.is_authenticated:
+        		name = request.user.username
+        		return render(request, 'mainsite/profile.html', {'member':member,'name': name})
+        	else:
+        		return render(request, 'mainsite/profile.html', {'member':member})
+
 	    except ObjectDoesNotExist:
 	    	return render(request, 'mainsite/404.html', {})
 	else:
