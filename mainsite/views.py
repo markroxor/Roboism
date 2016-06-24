@@ -146,9 +146,9 @@ def fill_info(request):
 
 @login_required
 def editprofile(request): 
-    instance = get_object_or_404(Member, username=request.user.username)
-    form = Member(request.POST or None, instance=instance)
+    obj = get_object_or_404(Member, username=request.user.username)
+    form = MemberForm(request.POST or None, instance=obj)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/profile/')
-    return render(request, 'editprofile.html', {'form': form})
+    return render(request, 'mainsite/editprofile.html', {'form': form})
