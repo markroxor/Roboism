@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 import os
 from django.utils.translation import ugettext_lazy as _
-from datetime import date
+
 
 from django import template
 register = template.Library()
@@ -14,8 +14,7 @@ class Member(models.Model):
     email = models.EmailField()
     branch = models.CharField(default="Branch", max_length=50,blank=True)
     work = models.CharField(default="Company/University", max_length=50,blank=True)
-    # DOB = models.DateField(default=timezone.now() , blank=True)
-    DOB = models.DateField(_("Date"), default=date.today)
+    DOB = models.DateField(default=timezone.now() , blank=True)
     year = models.CharField(default="Year", max_length=12,blank=True)
     bio = models.TextField(default="Lorem ipsum sit dolot fuck this shit !",blank=True)
     linkedin = models.URLField(blank=True)
