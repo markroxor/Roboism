@@ -12,6 +12,7 @@ from .forms import *
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.contrib.auth import authenticate, login
 
+name = 0
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -29,7 +30,7 @@ def register(request):
     variables = RequestContext(request, {
     'form': form
     })
- 
+
     return render_to_response(
     'registration/register.html',
     variables,
@@ -61,14 +62,22 @@ def index(request):
 		name = request.user.username
 		return render(request, 'mainsite/index.html', {'name': name})
 	else:
-		return render(request, 'mainsite/index.html', {})	
-	
+		return render(request, 'mainsite/index.html', {})
+
 
 def about_us(request):
-	return render(request, 'mainsite/about-us.html', {})
+	if request.user.is_authenticated:
+		name = request.user.username
+		return render(request, 'mainsite/about-us.html', {'name': name})
+	else:
+		return render(request, 'mainsite/about-us.html', {})
 
 def achievements(request):
-	return render(request, 'mainsite/achievements.html', {})
+	if request.user.is_authenticated:
+		name = request.user.username
+		return render(request, 'mainsite/achievements.html', {'name': name})
+	else:
+		return render(request, 'mainsite/achievements.html', {})
 
 def members(request):
 	member = Member.objects.filter()
@@ -89,7 +98,12 @@ def members(request):
 				elif m.year == "Final Year":
 					count.fourth += 1
 
-	return render(request, 'mainsite/members.html', {"count":count})
+	if request.user.is_authenticated:
+		name = request.user.username
+		return render(request, 'mainsite/members.html', {"count":count,'name': name})
+	else:
+		return render(request, 'mainsite/members.html', {"count":count})
+
 
 def our_projects(request):
 	project = Project.objects.all()
@@ -104,51 +118,91 @@ def our_projects(request):
 			count.ongoing += 1
 	count.total = count.completed + count.ongoing
 
-	return render(request, 'mainsite/our-projects.html', {'count':count})
-
+	if request.user.is_authenticated:
+		name = request.user.username
+		return render(request, 'mainsite/our-projects.html', {'count':count,'name': name})
+	else:
+		return render(request, 'mainsite/our-projects.html', {'count':count})
 
 def tutorials(request):
-	return render(request, 'mainsite/tutorials.html', {})
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'mainsite/tutorials.html', {'name': name})
+    else:
+        return render(request, 'mainsite/tutorials.html', {})
+
 
 def support_us(request):
-	return render(request, 'mainsite/support-us.html', {})
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'mainsite/support-us.html', {'name': name})
+    else:
+        return render(request, 'mainsite/support-us.html', {})
 
 def alumni(request):
-	member = Member.objects.filter(active = False)
-	return render(request, 'mainsite/alumni.html', {'member':member})
+    member = Member.objects.filter(active = False)
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'mainsite/alumni.html', {'member':member,'name': name})
+    else:
+        return render(request, 'mainsite/alumni.html', {'member':member})
+
 
 def active_members(request):
-	member = Member.objects.filter(active = True)
-	return render(request, 'mainsite/active-members.html', {'member':member})
+    member = Member.objects.filter(active = True)
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'mainsite/active-members.html', {'member':member}, {'name':  name})
+    else:
+    	return render(request, 'mainsite/active-members.html', {'member':member})
 
 def ongoing_projects(request):
-	project = Project.objects.filter(completed=False)
-	return render(request, 'mainsite/ongoing-projects.html', {'project':project})
+    project = Project.objects.filter(completed=False)
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'mainsite/ongoing-projects.html', {'project':project,'name': name})
+    else:
+        return render(request, 'mainsite/ongoing-projects.html', {'project':project})
+
 
 def completed_projects(request):
-	project = Project.objects.filter(completed=True)
-	return render(request, 'mainsite/completed-projects.html', {'project':project})
+    project = Project.objects.filter(completed=True)
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'mainsite/completed-projects.html', {'project':project,'name': name})
+    else:
+        return render(request, 'mainsite/completed-projects.html', {'project':project})
+
 
 def fill_info(request):
-	if request.method == 'POST':
-		details = MemberForm(request.POST)
-		if details.is_valid():
-			member = details.save(commit=False)
-			if request.user.is_authenticated:
-				member.username = request.user.username
-				member.email = request.user.email
-			member.save()
+    if request.method == 'POST':
+    	details = MemberForm(request.POST)
+    	if details.is_valid():
+    		member = details.save(commit=False)
+    		if request.user.is_authenticated:
+    			member.username = request.user.username
+    			member.email = request.user.email
+    		member.save()
 
-			return HttpResponseRedirect('/register/success')
-	else:
-		details = MemberForm()
-	return render(request, 'registration/fill_info.html', {'details': details})
+    		return HttpResponseRedirect('/register/success')
+    else:
+    	details = MemberForm()
+    if request.user.is_authenticated:
+        name = request.user.username
+    	return render(request, 'registration/fill_info.html', {'details': details,'name': name})
+    else:
+    	return render(request, 'registration/fill_info.html', {'details': details})
+
 
 @login_required
-def editprofile(request): 
+def editprofile(request):
     instance = get_object_or_404(Member, username=request.user.username)
     form = Member(request.POST or None, instance=instance)
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/profile/')
-    return render(request, 'editprofile.html', {'form': form})
+    if request.user.is_authenticated:
+        name = request.user.username
+        return render(request, 'editprofile.html', {'form': form,'name': name})
+    else:
+        return render(request, 'editprofile.html', {'form': form})
