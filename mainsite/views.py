@@ -39,6 +39,11 @@ def register(request):
 def success(request):
 	return render(request, 'registration/success.html', {})
 
+def loginfo(request):
+	if request.user.is_authenticated:
+		name = request.user.username
+		return render(request, {'name':name})
+
 @login_required
 def logout_page(request):
     logout(request)
@@ -47,21 +52,21 @@ def logout_page(request):
 @login_required
 def userprofile(request):
 	if request.user.is_authenticated:
-	    try:
-	    	member = Member.objects.get(username=request.user.username)
-	    	return render(request, 'mainsite/profile.html', {'member':member})
-	    except ObjectDoesNotExist:
-	    	return render(request, 'mainsite/404.html', {})
+	    member = Member.objects.get(username=request.user.username)
+	    projectlist = Project.objects.all()
+	    projects = []
+	    for p in projectlist:
+	    #	if member.username in p.contributers:
+	    	projects.append(p)
+
+	    return render(request, 'mainsite/profile.html', {'member':member, 'projects':project})
 	else:
 		return render(request, 'mainsite/404.html', {})
 
 
+
 def index(request):
-	if request.user.is_authenticated:
-		name = request.user.username
-		return render(request, 'mainsite/index.html', {'name': name})
-	else:
-		return render(request, 'mainsite/index.html', {})	
+	return render(request, 'mainsite/index.html', {})
 	
 
 def about_us(request):
@@ -152,3 +157,14 @@ def editprofile(request):
         form.save()
         return HttpResponseRedirect('/profile/')
     return render(request, 'mainsite/editprofile.html', {'form': form})
+
+@login_required
+def addproject(request):
+	if request.method == 'POST':
+		project = ProjectForm(request.POST)
+		if project.is_valid():
+			project.save()
+			return HttpResponseRedirect('/profile/')
+	else:
+		project = ProjectForm()
+	return render(request, 'mainsite/addprojects.html', {'project':project})

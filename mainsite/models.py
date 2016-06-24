@@ -42,6 +42,7 @@ class Project(models.Model):
     description = models.TextField(default="Shitty Project")
     github = models.URLField(null=True)
     completed = models.BooleanField()
+    contributers = models.CharField(max_length=100, default='dev')
 
     def __str__(self):
         return self.name
