@@ -48,3 +48,7 @@ class Project(models.Model):
 
     def publish(self):
         self.save()
+
+    @property
+    def picFilename(self,):
+        return  os.path.basename(self.pic.name)

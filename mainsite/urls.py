@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^accounts/profile/$', views.userprofile, name='userprofile'),
     url(r'^register/$', views.register),
     url(r'^profile/$', views.userprofile, name='userprofile'),
+    url(r'^profile/edit/$', views.editprofile, name='editprofile'),
     url(r'^register/success/$', views.success, name='success'),
     url(r'^register/fill_info/$', views.fill_info, name='fill_info'),
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Member, Project
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
@@ -136,9 +136,19 @@ def fill_info(request):
 			member = details.save(commit=False)
 			if request.user.is_authenticated:
 				member.username = request.user.username
+				member.email = request.user.email
 			member.save()
 
 			return HttpResponseRedirect('/register/success')
 	else:
 		details = MemberForm()
 	return render(request, 'registration/fill_info.html', {'details': details})
+
+@login_required
+def editprofile(request): 
+    instance = get_object_or_404(Member, username=request.user.username)
+    form = Member(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/profile/')
+    return render(request, 'editprofile.html', {'form': form})
