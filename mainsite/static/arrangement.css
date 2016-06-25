@@ -220,3 +220,31 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+/* add projects */
+
+#addproject{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+/* Profile */
+
+#userdetails{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+#userprojects{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}

@@ -33,6 +33,12 @@ hr.fade{
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
+#nav-bar li{
+	background-color:#000000;
+	opacity:0.7;
+	color:#FFFFFF;
+}
+
 
 /* common */
 
@@ -97,11 +103,4 @@ hr.fade{
 	font-size: 15px;
 }
 
-#nav-bar li{
-	background-color:#000000;
-	opacity:0.7;
-}
-#nav-bar li{
-	color:#FFFFFF;
-}
 

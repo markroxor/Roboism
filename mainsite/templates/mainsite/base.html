@@ -71,10 +71,13 @@
 						{% if not name %}
 								<a href="/login" class="w3-hover-black">Login</a>
 						{% else %}
+						<div class="w3-dropdown-hover">
 							<a>Hello {{ name }}!</a>
-							<a href="/logout/">Logout</a>
-							<a href="/profile/">Profile</a>
-
+							<div class="w3-dropdown-content">
+								<a href="/logout/">Logout</a>
+								<a href="/profile/">Profile</a>
+							</div>
+						</div>
 						{% endif %}
 					</li>
 				</ul>

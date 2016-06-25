@@ -1,0 +1,13 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+
+	<div id="addproject" class="w3-container">
+		<h5>Please fill your project information carefully, and before submitting new project, make sure your friend/teammate has not done the same. Duplicate projects will cause reduntency.</h5>
+		<h5>Make sure you add your teammates username in contributers carefully. Failing to do so, will lead to the project not showing in his/her profile.</h5>
+		<form id="addproject" class="w3-container" method="POST" class="post-form">{% csrf_token %}
+			{{ project.as_p }}
+		<button type="submit" class="save w3-btn w3-round-xlarge w3-blue w3-hover-red">Save</button>
+		</form>
+	</div>
+
+{% endblock %}

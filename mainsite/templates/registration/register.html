@@ -3,10 +3,9 @@
 {% block head %}User Registration{% endblock %}
 {% block content %}
     <form id="register" class="w3-container" method="POST" action=".">{% csrf_token %}
-        {% for field in form %}
-        <label class="w3-label" for="{{ field.name }}">{{ field.label }}</label>
-        {{ field }}
-        {% endfor %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
         <input class="w3-btn w3-round-xxlarge w3-blue" type="submit" value="Register" />
     </form>
 {% endblock %}

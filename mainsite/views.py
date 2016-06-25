@@ -56,10 +56,10 @@ def userprofile(request):
 	    projectlist = Project.objects.all()
 	    projects = []
 	    for p in projectlist:
-	    #	if member.username in p.contributers:
-	    	projects.append(p)
+	    	if member.username in p.contributers:	#this thing not working, need some other method to search p.contributers for member.username
+	    		projects.append(p)
 
-	    return render(request, 'mainsite/profile.html', {'member':member, 'projects':project})
+	    return render(request, 'mainsite/profile.html', {'member':member, 'projects':projects})
 	else:
 		return render(request, 'mainsite/404.html', {})
 
@@ -168,3 +168,12 @@ def addproject(request):
 	else:
 		project = ProjectForm()
 	return render(request, 'mainsite/addprojects.html', {'project':project})
+
+@login_required
+def editproject(request, proj):
+	project = get_object_or_404(Project, name=proj)
+	form = ProjectForm(request.POST or None, instance=project)
+	if form.is_valid():
+		form.save()
+		return HttpResponseRedirect('/profile/')
+	return render(request, 'mainsite/editproject.html', {'form':form}) 
