@@ -45,7 +45,7 @@ hr.fade{
 /* frontpage */
 
 
-#news{
+#news-box{
 	border: 2px solid black;
 }
 
@@ -101,6 +101,12 @@ hr.fade{
 
 .year p{
 	font-size: 15px;
+}
+
+/* Expo */
+
+#expo-body a{
+	text-decoration: none;
 }
 
 

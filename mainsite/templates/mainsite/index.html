@@ -38,11 +38,16 @@
 		<!latest news and updates>
 		<div id="news" class="w3-container">
 			<h3 class="w3-center">News and Updates</h3>
-			<div id="news-box">
-				<button id="btn-left" class="w3-btn-floating" style="left:0" onclick="nextNews()">&#10094;</button>
-				<button id="btn-right" class="w3-btn-floating" style="right:0" onclick="prevNews()">&#10095;</button>
-			</div>
+			<a href="/expo/">
+				<div id="news-box">
+					<button id="btn-left" class="w3-btn-floating" style="left:0" onclick="nextNews()">&#10094;</button>
+					<button id="btn-right" class="w3-btn-floating" style="right:0" onclick="prevNews()">&#10095;</button>
+				</div>
+			</a>
 		</div>
 		<script type="text/javascript" src="/static/slideshow-animation.js" ></script>
+		<script type="text/javascript">
+			$("#news-box").backstretch("/static/roboexpo.jpg");
+		</script>
 
 {% endblock %}
