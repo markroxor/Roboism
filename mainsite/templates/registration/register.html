@@ -2,7 +2,7 @@
 {% block title %}User Registration{% endblock %}
 {% block head %}User Registration{% endblock %}
 {% block content %}
-    <form id="register" class="w3-container" method="post" action=".">{% csrf_token %}
+    <form id="register" class="w3-container" method="POST" action=".">{% csrf_token %}
         <table border="0">
             {{ form.as_table }}
         </table>

@@ -1,18 +1,63 @@
 {% extends 'mainsite/base.html' %}
 {% block content %}
 
-<div class="w3-container w3-row-padding w3-card-4 student">
-  <div class="w3-container w3-col s3">
-    <img src=../../static/{{member.picFilename}} >
+<! user details>
+<div id="userdetails" class="w3-container w3-row-padding w3-card-4 student">
+  <div class="w3-container w3-col s4">
+    <img src="{{member.picFilename}}">
+    {{member.resume.name}}
   </div>
-  <div class="w3-container w3-col s6">
+  <div class="w3-container w3-col s8">
     <h5>{{ member.name }}</h5>
     <p>Branch: {{member.branch}}</p>
-    <p>{{ member.email }}</p>
+    <p>E-mail id: {{ member.email }}</p>
     <a href={{member.linkedin}} alt="LinkedIn Account" title="LinkedIn Account"><img src="/static/linkedin.png"></a>
-    <p style="padding-top:3px;">Download Resume <a id="download" href=../../static/{{member.resumeFilename}} <i class="material-icons">file_download</i></a></p>
-    
+    <p style="padding-top:3px;">Download Resume <a id="download" href={{member.resumeFilename}} <i class="material-icons">file_download</i></a></p>
+    <a href="/profile/edit"><button class="w3-btn w3-blue">Edit Details</button></a>
   </div>
+</div>
 
-
+<!user projects>
+<div id="userprojects" class="w3-container">
+  {% if project %}
+    <h3 class="w3-center w3-text-deep-orange">Ongoing Projects</h3>
+    {% for p in projects %}
+      {% if not p.completed %}
+      <div class="w3-container w3-row-padding w3-card-4 proj">
+      <h5 class="w3-center">{{p.name}}</h5>
+        <div class="w3-container w3-col s4"> 
+          <img src="{{p.picFilename}}">
+        </div>
+        <div class="w3-container w3-col s8">
+          <p>{{p.description}}</p>
+          <a href="{{p.github}}">Github Link</a>
+          <p>Contributers: {{p.contributers}}</p>
+           <a href="/profile/editproject/{{p.name}}"><button class="w3-btn w3-blue">Edit Project</button></a>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+    <h3 class="w3-center w3-text-deep-orange">Completed Projects</h3>
+    {% for p in projects %}
+      {% if p.completed %}
+      <div class="w3-container w3-row-padding w3-card-4 proj">
+      <h5 class="w3-center">{{p.name}}</h5>
+        <div class="w3-container w3-col s4"> 
+          <img src="{{p.picFilename}}">
+        </div>
+        <div class="w3-container w3-col s8">
+          <p>{{p.description}}</p>
+          <a href="{{p.github}}">Github Link</a>
+          <p>Contributers: {{p.contributers}}</p>
+          <a href="/profile/editproject/{{p.name}}"><button class="w3-btn w3-blue">Edit Project</button></a>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+    
+  {% else %}
+    <h3 class="w3-center w3-text-deep-orange">No projects to show!</h3>
+  {% endif %}
+  <a href="/profile/addproject"><button class="w3-btn w3-blue">Add Project</button></a>
+</div>
 {% endblock %}

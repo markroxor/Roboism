@@ -14,7 +14,7 @@ class Member(models.Model):
     email = models.EmailField()
     branch = models.CharField(default="Branch", max_length=50,blank=True)
     work = models.CharField(default="Company/University", max_length=50,blank=True)
-    DOB = models.DateField(default=timezone.now() , blank=True)
+    DOB = models.DateField(default=timezone.now(), blank=True)
     year = models.CharField(default="Year", max_length=12,blank=True)
     bio = models.TextField(default="Lorem ipsum sit dolot fuck this shit !",blank=True)
     linkedin = models.URLField(blank=True)
@@ -37,14 +37,19 @@ class Member(models.Model):
 
 
 class Project(models.Model):
-    pic = models.ImageField(null=True)
+    pic = models.ImageField(blank=True)
     name = models.CharField(default="Name", max_length=50)
     description = models.TextField(default="Shitty Project")
-    github = models.URLField(null=True)
+    github = models.URLField(blank=True)
     completed = models.BooleanField()
+    contributers = models.CharField(max_length=100, default='dev')
 
     def __str__(self):
         return self.name
 
     def publish(self):
         self.save()
+
+    @property
+    def picFilename(self,):
+        return  os.path.basename(self.pic.name)

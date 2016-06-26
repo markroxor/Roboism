@@ -10,31 +10,19 @@
 			{% if m.year == "First Year" %}
 				<div class="w3-container w3-row-padding w3-card-4 student">
 					<div class="w3-container w3-col s3">
-						<img src="{{ m.pic.url }}">
+						<! image link>
 					</div>
 					<div class="w3-container w3-col s6">
 						<h5>{{ m.name }}</h5>
 						<p>Branch: {{m.branch}}</p>
 						<p>Mail Id: {{ m.email }}</p>
 						<div class="w3-accordion">
-							<button class="w3-btn-block w3-left-align" onclick="open_bio();">About Me</button>
+				<!.......<button class="w3-btn-block w3-left-align w3-blue" onclick="open_bio();">
+							<button class="w3-btn-block w3-left-align w3-blue">About Me</button>
 							<div id="bio" class="w3-accordion-content">
 								<p>{{ m.bio }}</p>
 							</div>
-							<script type="text/javascript">
-								function open_bio() {
-								    var bio = document.getElementById("bio");
-								    var drop = document.getElementById("drop");
-								    if (bio.className.indexOf("w3-show") == -1){
-								        bio.className += " w3-show";
-								        bio.previousElementSibling.className += " w3-red";
-								    }
-								    else{
-								        bio.className = bio.className.replace(" w3-show", "");
-								        previousElementSibling.className = previousElementSibling.className.replace(" w3-red", "");
-								    }
-								}
-							</script>
+					
 						</div>
 						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
 					</div>
@@ -53,31 +41,17 @@
 			{% if m.year == "Second Year" %}
 				<div class="w3-container w3-row-padding w3-card-4 student">
 					<div class="w3-container w3-col s3">
-						<img src="{{ m.pic.url }}">
+						<!image link>
 					</div>
 					<div class="w3-container w3-col s6">
 						<h5>{{ m.name }}</h5>
 						<p>Branch: {{m.branch}}</p>
 						<p>Mail Id: {{ m.email }}</p>
 						<div class="w3-accordion">
-							<button class="w3-btn-block w3-left-align w3-blue" onclick="open_bio();">About Me</button>
+							<button class="w3-btn-block w3-left-align w3-blue">About Me</button>
 							<div id="bio" class="w3-accordion-content">
 								<p>{{ m.bio }}</p>
 							</div>
-							<script type="text/javascript">
-								function open_bio() {
-								    var bio = document.getElementById("bio");
-								    var drop = document.getElementById("drop");
-								    if (bio.className.indexOf("w3-show") == -1){
-								        bio.className += " w3-show";
-								        bio.previousElementSibling.className += " w3-red";
-								    }
-								    else{
-								        bio.className = bio.className.replace(" w3-show", "");
-								        previousElementSibling.className = previousElementSibling.className.replace(" w3-red", "");
-								    }
-								}
-							</script>
 						</div>
 						<a href="#"><button style="margin-top:20px;" class="w3-btn w3-round-xxlarge w3-blue">See Project's of {{ m.name }}</button></a>
 					</div>
@@ -88,6 +62,7 @@
 				</div>
 			{% endif %}
 			{% endfor %}
+
 			<hr class="fade">
 		</div>
 		<div id="third-yr" class="year w3-container">
@@ -96,7 +71,7 @@
 			{% if m.year == "Third Year" %}
 				<div class="w3-container w3-row-padding w3-card-4 student">
 					<div class="w3-container w3-col s3">
-						<img src="{{ m.pic.url }}">
+						<! image link>
 					</div>
 					<div class="w3-container w3-col s6">
 						<h5>{{ m.name }}</h5>
@@ -136,5 +111,14 @@
 			{% endfor %}
 			<hr class="fade">
 		</div>
+		<script type="text/javascript">								
+			$(document).ready(function(){
+				$("div div div div").children("#bio").prev().click(function(){
+					$(this).toggleClass("w3-red");
+					$(this).next().toggleClass("w3-show");
+				});		
+				
+			});
+		</script>
 
 {% endblock %}

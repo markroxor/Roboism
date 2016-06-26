@@ -2,7 +2,7 @@ import re
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from .models import Member
+from .models import *
 
 class RegistrationForm(forms.Form):
     username = forms.RegexField(regex=r'^\w+$', required=True, max_length=30, widget=forms.TextInput(attrs={'class':'inputfield w3-input w3-border'}), label=_("Username"), error_messages={ 'invalid': _("This value must contain only letters, numbers and underscores.") })
@@ -24,10 +24,11 @@ class RegistrationForm(forms.Form):
         return self.cleaned_data
 
 
+
 class MemberForm(forms.ModelForm):
     class Meta:
         model = Member
-        fields = ('name','branch','work','DOB','year','bio','linkedin','resume', 'active')
+        fields = ('pic','name','branch','work','DOB','year','bio','linkedin','resume', 'active')
         labels = {
             'work':_('Place of Work'), 'DOB':_('Date of Birth'), 'bio':_('A little about Yourself'), 'linkedin':_('Your Linkedin Profile URL'),
         }
@@ -45,4 +46,23 @@ class MemberForm(forms.ModelForm):
             'linkedin': forms.TextInput(attrs={'class':'inputfield w3-input w3-border'}),
             'resume': forms.TextInput(attrs={'class':'inputfield w3-input w3-border'}),
             'active': forms.TextInput(attrs={'class':'inputfield w3-input w3-border'}),
+        }
+
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = '__all__'
+        labels = {
+            'pic':_('Project Picture'), 'name':_('Project Name'), 'github':_('Github Link'), 
+        }
+        help_texts = {
+            'pic':_('If present'), 'github':_('If present'), 'completed':_('Tick if project is complete'), 'contributers':_('Write the names of Members who were involved in the project correctly.')
+        }
+        widget = {
+            'pic': forms.TextInput(attrs={'class':'w3-input w3-border'}),
+            'name': forms.TextInput(attrs={'class':'w3-input w3-border'}),
+            'description': forms.TextInput(attrs={'class':'w3-input w3-border'}),
+            'github': forms.TextInput(attrs={'class':'w3-input w3-border'}),
+            'completed': forms.TextInput(attrs={'class':'w3-input w3-border'}),
+            'contributers': forms.TextInput(attrs={'class':'w3-input w3-border'}),
         }

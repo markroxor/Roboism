@@ -11,9 +11,10 @@
 				<div class="w3-col s6 w3-container">
 					<h5>{{ p.name }}</h5>
 					<p>{{ p.description }}</p>
+					<p>Contributers: {{ p.contributers}}</p>
 				</div>
 				<div class="w3-col s3 w3-container">
-					<p>Find it at Github: <a href="#"><img src="/static/github.png" alt="github" title="github"></a></p>
+					<p>Find it at Github: <a href="{{p.github}}"><img src="/static/github.png" alt="github" title="github"></a></p>
 				</div>
 				<hr class="fade"> 
 			</div>

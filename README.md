@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/markroxor/Roboism.svg?branch=master)](https://travis-ci.org/markroxor/Roboism)
+[![Build Status](https://travis-ci.org/markroxor/Roboism.svg?branch=master)](http://api.travis-ci.org/markroxor/Roboism.svg)
 [![Dependency status](https://gemnasium.com/markroxor/Roboism.svg)](https://gemnasium.com/markroxor/Roboism)
 
 ## RoboISM - Running at [roboism.markroxor.in](roboism.markroxor.in)
