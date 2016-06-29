@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roboevents</title>
+<meta name="description" content="A 3D globe showing the locations and elevations of 1406 volcanoes on planet earth rendered with WebGL.">
+<link rel="stylesheet" type="text/css" href="w3css.css">
+<link href='https://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
+<style type="text/css">
+html {height: 100%;}
+body {
+margin: 0;
+padding: 0;
+background: #000 url('loading.gif') center center no-repeat;
+color: #fff;
+font: 13px/20px;
+height: 100%;
+}
+
+a{color: #FFFFFF;text-decoration: none;
+font-family: 'Cuprum', sans-serif;}
+button{font-family: 'Cuprum', sans-serif;
+border-radius:2px;}
+.bull {padding: 0 5px;color: #555;}
+h3{
+text-align:center;
+color:#FFFFFF;
+}
+#info{
+width:22%;
+position:absolute;
+top:1.5%;
+right:2%;
+}
+#Events{
+max-height:150px;
+overflow:auto;
+}
+</style>
+</head>
+<body>
+
+<div id="container"></div>
+<div id="title">
+	
+</div>	
+<div id="info">
+	<h3>Color Keys</h3>
+	<div id	= "accordion" class="w3-accordion w3-black">
+		<button class="w3-btn-block w3-left-align" style="color: #800000">January</button> <!....  #800000>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">Techfest</a>
+    			<a href="#">Singapore Robotic Games</a>
+      			<a href="#">ION Autonomous Snowplow Competition</a>
+			<a href="#">Powered by Sun</a>
+			<a href="#">Kurukshetra</a>
+			<a href="#">Robotix</a>
+			<a href="#">FIRST LEGO League of Central Europe</a>
+			<a href="#">Inter-School Robotics Challenge</a>
+		</div>
+		<button class="w3-btn-block w3-left-align" style="color:#FF0000">February</button><!....  #FF0000>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">Motorama Robot Conflict</a>
+    			<a href="#">Pragyan</a>
+      			<a href="#">Quark Roboficial</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#ff0066">March</button><!....  #ff0066>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">METU Robotics Days</a>
+    			<a href="#">AMD Jerry Sanders Creative Design Contest</a>
+      			<a href="#">APEC Micromouse Contest</a>
+			<a href="#">Festival de Robotique</a>
+			<a href="#">Manitoba Robot Games</a>
+			<a href="#">RobotChallenge</a>
+			<a href="#">Apogee iStrike</a>
+			<a href="#">Cognizance</a>
+			<a href="#">EMBED National Robotics Challenge</a>
+    			<a href="#">Robotics Tournament</a>
+      			<a href="#">Techkriti RoboGames</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#990099">April</button><!....  #990099>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">Brown IEEE Robotics Competition</a>
+    			<a href="#">FIRST Robotics Competition</a>
+      			<a href="#">VEX Robotics World Championship</a>
+			<a href="#">Greater Philadelphia SeaPerch Challenge</a>
+			<a href="#">Alabama Robotics Competition</a>
+			<a href="#">Alcabot-Hispabot</a>
+			<a href="#">Carnegie Mellon Mobot Races</a>
+			<a href="#">CIRC Central Illinois Bot Brawl</a>
+			<a href="#">DTU RoboCup</a>
+    			<a href="#">Istanbul Technical University Robotic Olympics</a>
+      			<a href="#">Istrobot</a>
+			<a href="#">Mercury Remote Robot Challenge</a>
+    			<a href="#">National Robotics Challenge
+</a>
+      			<a href="#">Penn State Abington Fire-Fighting Robot Contest</a>
+			<a href="#">Penn State Abington Mini Grand Challenge</a>
+			<a href="#">Robotdalen Robotics Innovation Challenge</a>
+			<a href="#">RoboRodentia</a>
+			<a href="#">RObotX</a>
+			<a href="#">Robot-SM</a>
+			<a href="#">The Tech Museum of Innovation's Annual Tech Challenge</a>
+    			<a href="#">Trinity College Fire Fighting Home Robot Contest</a>
+      			<a href="#">UC Davis Picnic Day MicroMouse contest</a>
+      			<a href="#">UNI MiniSumo Robotics Competition</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#0033cc">May</button><!....  #0033cc>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">ICRA Robot Challenge</a>
+    			<a href="#">Baltic Robot Sumo</a>
+      			<a href="#">CybAiRBot</a>
+			<a href="#">Hawaii Underwater Robot Challenge</a>
+			<a href="#">Eurobot</a>
+			<a href="#">Motodrone AFO Competition</a>
+			<a href="#">NATCAR</a>
+			<a href="#">National SeaPerch Challenge</a>
+			<a href="#">RoboFest</a>
+    			<a href="#">RoboRave</a>
+      			<a href="#">SPURT</a>
+			<a href="#">Chibots SRS Robo-Magellan</a>
+    			<a href="#">Swiss Eurobot</a>
+      			<a href="#">University Rover Challenge</a>
+			<a href="#">Western Canadian Robot Games</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#3399ff">June</button><!....  #3399ff>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">AUVS International Ground Robotics Competition</a>
+    			<a href="#">Concurso Robótica Radio Servicio Aguilar</a>
+      			<a href="#">HBRC Challenge</a>
+			<a href="#">International Autonomous Robot Contest</a>
+			<a href="#">Los Angeles/Orange County Robot Challenge</a>
+			<a href="#">MATE ROV Competition</a>
+			<a href="#">NASA RASCAL Robo-Ops</a>
+			<a href="#">NASA Sample Return Robot Challenge</a>
+			<a href="#">National Underwater Robotics Challenge</a>
+    			<a href="#">RoboCup Robot Soccer World Cup</a>
+      			<a href="#">Pobot Junior Cup</a>
+			<a href="#">Robotic Day</a>
+    			<a href="#">Sparkfun Autonomous Vehicle Competition</a>
+      			<a href="#">UK National Micromouse Competition</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#00ffff">July</button><!....  #00ffff>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+    			<a href="#">WCCI Competition</a>
+      			<a href="#">ASABE Robotics Competition</a>
+			<a href="#">International Autonomous Robot Racing Competition</a>
+			<a href="#">AAAI Mobile Robot Competition</a>
+			<a href="#">International RoboSub Competition</a>
+			<a href="#">Botball National Tournament</a>
+			<a href="#">K*bot World Championships</a>
+			<a href="#">Microtransat Challenge</a>
+    			<a href="#">RoboBombeiro</a>
+      			<a href="#">Robocore</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#008080">August</button><!....  #008080>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">Missouri State Fair Robot Expo</a>
+			<a href="#">International Micro Air Vehicle Competition</a>
+			<a href="#">DragonCon Robot Battles</a>
+    			<a href="#">AUVS International Aerial Robotics Competition</a>
+      			<a href="#">FIRA Robot World Cup</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#ffcc00">September</button><!....  #ffcc00>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+    			<a href="#">UAV Outback Challenge</a>
+      			<a href="#">euRathlon</a>
+			<a href="#">MindSpark</a>
+			<a href="#">National Junior Robotics Competition</a>
+			<a href="#">Nigeria Robotics Championship</a>
+			<a href="#">RoboCup Junior Australia</a>
+			<a href="#">Robothon</a>
+			<a href="#">Robotour</a>
+    			<a href="#">Robots Intellect</a>
+      			<a href="#">Sumo.uy</a>
+      			<a href="#">World Robotic Sailing Championship</a>
+		</div>
+		<button class="w3-btn-block w3-left-align"style="color:#00ff00">October</button><!....  #00ff00>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">CalGames</a>
+			<a href="#">Chibotica</a>
+			<a href="#">Critter Crunch</a>
+    			<a href="#">Korea Intelligent Robot Contest</a>
+      			<a href="#">Latin American Robotics Competition</a>
+		</div>
+		<button class="w3-btn-block w3-left-align" style="color:#739900">November</button><!....  #739900>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+    			<a href="#">Bloomington VEX Tournament</a>
+      			<a href="#">Texas BEST competition</a>
+			<a href="#">STHLM Robot Championship</a>
+			<a href="#">International Micro Robot Maze Contest</a>
+			<a href="#">AHRC Robot Rally</a>
+			<a href="#">Robotex</a>
+			<a href="#">All Japan MicroMouse Contest</a>
+			<a href="#">Robocon</a>
+    			<a href="#">Robotic Arena</a>
+      			<a href="#">DPRG RoboRama</a>
+      			<a href="#">Singapore Inter-School Micromouse Competition</a>
+		</div>
+		<button class="w3-btn-block w3-left-align" style="color:#006600">December</button><!....  #006600>
+		<div id="Events" class="w3-accordion-content w3-animate-zoom">
+			<a href="#">ROBOEXOTICA</a>
+			<a href="#">South's BEST competition</a>
+			<a href="#">IROC International Robot Olympiad</a>
+    			<a href="#">Penn State Abington Robo-Hoops</a>
+		</div>
+	</div>
+	<p>Click on the months to see the events taking place in the same.</p>
+</div>
+
+
+
+<script type="text/javascript" src="detector-threejs.min.js"></script>
+<script type="text/javascript" src="globe.js"></script>
+<script type="text/javascript">
+if(!Detector.webgl){
+    Detector.addGetWebGLMessage();
+} else {
+    var container = document.getElementById('container');
+    var globe = new DAT.Globe(container);
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET', '/Globe/roboevents.json', true);
+    xhr.onreadystatechange = function(e) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+	    for(var i=0; i<data.length; i++){
+           	 globe.addData(data[i][1], data[i][2]);
+           	 globe.createPoints();
+	    }
+            globe.animate();
+            document.body.style.backgroundImage = 'none';
+        }
+    };
+    xhr.send(null);
+}
+</script>
+<script type="text/javascript">								
+	$(document).ready(function(){
+		$("div div").children("#Events").prev().click(function(){
+			$(this).next().toggleClass("w3-show");
+		});	
+		$("a").hover(function(){
+			$(this).css("background-color","#FFFFFF");
+			$(this).css("color","#000000");
+		},function(){
+			$(this).css("background-color","#000000");
+			$(this).css("color","#FFFFFF");
+		});	
+				
+	});
+</script>
+
+
+</body>
+</html>
