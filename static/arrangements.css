@@ -205,3 +205,104 @@
 	position: relative;
 	top:5px;
 }
+
+/* registration */
+
+#registration{
+	position: relative;
+	padding-top: 200px;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-bottom: 200px;
+}
+
+#login label, input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/*ISM animation*/
+#ISM-animation{
+	position:relative;
+	margin:auto;
+}
+.shuttle img{
+	position:absolute;
+	bottom:0%;	
+}
+@keyframes shuttle{
+	0%{left:-10%;}
+	100%{left:100%;}
+}
+@-webkit-keyframes shuttle{
+	0%{left:-10%;}
+	100%{left:100%;}
+}
+.cl-one img{
+	position:absolute;
+	bottom:70%;
+}
+@keyframes cloud1{
+	0%{left:-10%;}
+	100%{left:100%;}
+}
+@-webkit-keyframes cloud1{
+	0%{left:-10%;}
+	100%{left:100%;}
+}
+.cl-two img{
+	position:absolute;
+	bottom:80%;
+}
+@keyframes cloud2{
+	0%{left:30%;}
+	70%{left:100%;}
+	70.01%{left:-10%;}
+	100%{left:30%;}
+}
+@-webkit-keyframes cloud2{
+	0%{left:30%;}
+	70%{left:100%;}
+	70.01%{left:-10%;}
+	100%{left:30%;}
+}
+.cl-three img{
+	position:absolute;
+	bottom:70%;
+}
+@keyframes cloud3{
+	0%{left:100%;}
+	100%{left:-5%;}
+}
+@-webkit-keyframes cloud3{
+	0%{left:100%;}
+	100%{left:-5%;}
+}
+.cl-four img{
+	position:absolute;
+	bottom:80%;
+}
+@keyframes cloud4{
+	0%{left:100%;height:30px;width:60px;}
+	100%{left:-5%;height:50px;width:85px;}
+}
+@-webkit-keyframes cloud4{
+	0%{left:100%;height:30px;width:60px;}
+	100%{left:-5%;height:50px;width:85px;}
+}
+.sun img{
+	position:absolute;
+	bottom:75%;
+}
+@keyframes sun{
+	0%{left:-10%;}
+	100%{left:100%;}
+}
+@-webkit-keyframes sun{
+	0%{left:-10%;}
+	100%{left:100%;}
+}
+.buildings img{
+	position:absolute;
+	bottom:-300px;
+}
