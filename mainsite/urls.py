@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^profile/editproject/(?P<proj>)/$', views.editproject, name='editproject'),
     url(r'^register/success/$', views.success, name='success'),
     url(r'^register/fill_info/$', views.fill_info, name='fill_info'),
+    url(r'^expo/$', views.expo, name='expo'),
 ]

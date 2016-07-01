@@ -1,0 +1,90 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+	<style type="text/css">
+		.backstretch img{
+				opacity: 0.25;
+			}
+	</style>
+
+	<div id="expo" class="w3-container">
+		<div id="expo-head" class="w3-container">
+			<h3 class="w3-center">Robo Expo 2016</h3>
+			<h5 class="w3-center">The annual Robotics exhibition of ISM Dhanbad</h5>
+		</div>
+		<div id="expo-body" class="w3-container w3-card-4">
+			<h5 class="w3-center">What is expo?</h5>
+			<p>Expo is the hall of fame of the best, baddest and most innovative technological project's created by student's of ISM Dhanbad. It is conducted by <a class="w3-text-deep-orange" href="/about/">Robotics Club</a> of ISM Dhanbad anually generally around the month of August and September. Every year, few best project's are shortlisted and exhibited in a two-day interctive exhibition. Not surprisingly, if attracts a huge amount of crowd consisting of curious students, proud professors and also civilians. The exhibition always gains media attention and lurking journalist's with big camera's and taking notes are a common sight.<br>Any student of ISM who is interested and having an innovative project can participate in Expo, just contact with Robotics Club member's for more information or leave a message <a href="#">here</a> describing your project and contact information.</p>
+		</div> 
+		<div id="expo-poll" class="w3-container">
+			<h5>Right now, Robotics Club is in process of deciding cool project's to present in expo. And you can help us choose the best project's out of the list. Take the poll below and express your opinion.</h5>
+			<form class="w3-container" method="POST"> {% csrf_token %}
+				{{project.as_p}}
+				<button type="submit" class="w3-btn w3-blue w3-round">Submit</button>
+			</form>
+			<div id="votes" class="w3-container">
+				<h5 class="w3-center">Vote share of the projects</h5>
+				<div class="w3-container w3-row-padding">
+					<div class="w3-container w3-col s4">
+						<p>Project 1  ( {{Vote.project1}} votes)</p>
+					</div>
+					<div class="w3-container w3-col s8">
+						<div class="w3-progress-container">
+							<div id="project1" class="w3-progressbar w3-blue"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-container w3-row-padding">
+					<div class="w3-container w3-col s4">
+						<p>Project 2 ( {{Vote.project2}} votes )</p>
+					</div>
+					<div class="w3-container w3-col s8">
+						<div class="w3-progress-container">
+							<div id="project2" class="w3-progressbar w3-blue"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-container w3-row-padding">
+					<div class="w3-container w3-col s4">
+						<p>Project 3 ( {{Vote.project3}} votes )</p>
+					</div>
+					<div class="w3-container w3-col s8">
+						<div class="w3-progress-container">
+							<div id="project3" class="w3-progressbar w3-blue"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3-container w3-row-padding">
+					<div class="w3-container w3-col s4">
+						<p>Project 4 ( {{Vote.project4}} votes )</p>
+					</div>
+					<div class="w3-container w3-col s8">
+						<div class="w3-progress-container">
+							<div id="project4" class="w3-progressbar w3-blue"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		$("#expo-body").backstretch("/static/robotic-picker.jpg");
+
+		var all = ( {{Vote.project1}} + {{Vote.project2}} + {{Vote.project3}} + {{Vote.project4}} );
+		console.log(all)
+		var p1 = ({{Vote.project1}}/all)*100;
+		console.log(p1)
+		var p2 = ({{Vote.project2}}/all)*100;
+		console.log(p2)
+		var p3 = ({{Vote.project3}}/all)*100;
+		console.log(p3)
+		var p4 = ({{Vote.project4}}/all)*100;
+		console.log(p4)
+
+		$('#project1').animate({width: p1 + '%'}, 3000);
+		$('#project2').animate({width: p2 + '%'}, 3000);
+		$('#project3').animate({width: p3 + '%'}, 3000);
+		$('#project4').animate({width: p4 + '%'}, 3000);
+	</script>
+
+{% endblock %}

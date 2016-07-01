@@ -66,3 +66,10 @@ class ProjectForm(forms.ModelForm):
             'completed': forms.TextInput(attrs={'class':'w3-input w3-border'}),
             'contributers': forms.TextInput(attrs={'class':'w3-input w3-border'}),
         }
+
+
+class ExpoProjectForm(forms.ModelForm):
+    class Meta:
+        model = ExpoProject
+        fields = '__all__'
+        

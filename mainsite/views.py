@@ -177,3 +177,30 @@ def editproject(request, proj):
 		form.save()
 		return HttpResponseRedirect('/profile/')
 	return render(request, 'mainsite/editproject.html', {'form':form}) 
+
+
+def expo(request):
+	if request.method == 'POST':
+		project = ExpoProjectForm(request.POST)
+		if project.is_valid():
+			project.save()
+			return HttpResponseRedirect('/expo/')
+	else:
+		project = ExpoProjectForm()
+
+	class VoteCount:
+		project1 = project2 = project3 = project4 = 0
+
+	Vote = VoteCount()
+	vote = ExpoProject.objects.all()
+	for v in vote:
+		if v.project1:
+			Vote.project1 += 1
+		if v.project2:
+			Vote.project2 += 1
+		if v.project3:
+			Vote.project3 += 1
+		if v.project4:
+			Vote.project4 += 1
+
+	return render(request, 'mainsite/expo.html', {'project':project, 'Vote':Vote})

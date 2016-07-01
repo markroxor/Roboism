@@ -8,11 +8,18 @@ from django import template
 register = template.Library()
 
 class Member(models.Model):
+    branch_choice = (
+        ('First Year','First Year'),
+        ('Second Year','Second Year'),
+        ('Third Year','Third Year'),
+        ('Final Year','Final Year'),
+        ('Alumni','Alumni'),
+    )
     pic = models.ImageField(upload_to='./mainsite/static/',blank=True)
     username = models.CharField(default="Username", max_length=20)
     name = models.CharField(default="Name", max_length=50, blank=True)
     email = models.EmailField()
-    branch = models.CharField(default="Branch", max_length=50,blank=True)
+    branch = models.CharField(choices=branch_choice, default='First Year',blank=True, max_length=11)
     work = models.CharField(default="Company/University", max_length=50,blank=True)
     DOB = models.DateField(default=timezone.now(), blank=True)
     year = models.CharField(default="Year", max_length=12,blank=True)
@@ -53,3 +60,10 @@ class Project(models.Model):
     @property
     def picFilename(self,):
         return  os.path.basename(self.pic.name)
+
+
+class ExpoProject(models.Model):
+    project1 = models.BooleanField()
+    project2 = models.BooleanField()
+    project3 = models.BooleanField()
+    project4 = models.BooleanField()
