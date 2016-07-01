@@ -1,5 +1,6 @@
 from django.conf.urls import include,url,patterns
 from . import views
+import django.contrib.auth.views as auth_views
 
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
@@ -13,11 +14,11 @@ urlpatterns = [
 	url(r'^members/active/$', views.active_members, name='active_members'),
 	url(r'^projects/ongoing/$', views.ongoing_projects, name='ongoing_projects'),
 	url(r'^projects/completed/$', views.completed_projects, name='completed_projects'),
-    url(r'^login/', 'django.contrib.auth.views.login'),
+    url(r'^login/',auth_views.login, name="auth_views.login"),
     url(r'^home/', views.index, name='index'),
     url(r'^logout/$', views.logout_page),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    url(r'^accounts/profile/$', views.userprofile, name='userprofile'),
+	url(r'^accounts/login/$',auth_views.login, name="auth_views.login"),
+	url(r'^accounts/userprofile/$', views.userprofile, name='userprofile'),
     url(r'^register/$', views.register),
     url(r'^profile/$', views.userprofile, name='userprofile'),
     url(r'^profile/edit/$', views.editprofile, name='editprofile'),

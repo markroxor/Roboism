@@ -5,8 +5,8 @@
 		<title>RoboISM</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="/static/w3css.css">
-		<link rel="stylesheet" type="text/css" href="/static/arrangement.css">
-		<link rel="stylesheet" type="text/css" href="/static/styles.css">
+		<link rel="stylesheet" type="text/css" href="/static/arrangements.css">
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,11 +16,11 @@
 		<script type="text/javascript" src="/static/login.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-			 	$("#nav-bar li").mouseenter(function(){		
+			 	$("#nav-bar li").mouseenter(function(){
  					$(this).css("opacity","1");
  				});
  				$("#nav-bar li").mouseleave(function(){
- 					$(this).css("opacity","0.7");			
+ 					$(this).css("opacity","0.7");
  				});
  			});
 		</script>
@@ -68,31 +68,60 @@
 						<a id="_support" href="/support-us" class="w3-hover-black">Support Us!</a>
 					</li>
 					<li>
-						{% if not name %}
+						{% if not member %}
 								<a href="/login" class="w3-hover-black">Login</a>
 						{% else %}
-						<div class="w3-dropdown-hover">
-							<a>Hello {{ name }}!</a>
-							<div class="w3-dropdown-content">
-								<a href="/logout/">Logout</a>
-								<a href="/profile/">Profile</a>
-							</div>
-						</div>
+							<a>Hello {{ member.name }}!</a>
+							<a href="/logout/">Logout</a>
+							<a href="/userprofile/">Profile</a>
+
 						{% endif %}
 					</li>
+
+					<!-- <li class="w3-dropdown-click">
+						<p class="w3-hover-blue" onclick="open_login();" style="margin:0; padding-top:8px; padding-bottom:8px; padding-left:16px; padding-right:16px;">User Login</p>
+						<div id="login" class="w3-dropdown-content w3-card-4" style="right:0">
+							<form class="w3-container">
+								<label><p class="lg" >User Name</p></label>
+								<input class="w3-input" type="text">
+								<label><p class="lg" >Password</p></label>
+								<input class="w3-input" type="text">
+							</form>
+
+						</div>
+						<div id="logged" class="w3-dropdown-content w3-card-4">
+
+						</div>
+					</li> -->
 				</ul>
 			</div>
 		</div>
 
             {% block content %}
             {% endblock %}
-
+		<div id="ISM-animation">
+			<div class="sky">
+				<div class="cl-one"><img src="/static/cloud.png"></div>
+				<div class="cl-two"><img src="/static/cloud.png"></div>
+				<div class="cl-three"><img src="/static/megh.png"></div>
+				<div class="cl-four"><img src="/static/megh.png"></div>
+				<div class="sun"><img src="/static/sun.png"></div>
+			</div>
+			<div class="buildings"><img src="/static/ism.png"></div>
+			<div class="shuttle">
+				<img src="/static/bus.png">
+			</div>
+		</div>
 		<!footer>
 		<footer id="foot" class="w3-row-padding">
 			<div class="w3-col s6 w3-container">
+				<!-- <a>Logged in as {{ user.username }}</a>
+				<a href="/logout/">Logout</a> -->
+				<!-- <h5>For Nerds</h5> -->
 				<p>
 					Crafted with  <a id="cup" href="https://www.facebook.com/roboism/"><img src="/static/food.svg"></a>
-					<a href="#" class="w3-text-red">Meet the developers</a>
+					by <a href="http://markroxor.in/">markroxor</a><br>
+					<a href="#" class="w3-red">Meet the developers</a>
 				</p>
 			</div>
 			<div class="w3-col s6 w3-container">
