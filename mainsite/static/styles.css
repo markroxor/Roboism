@@ -110,3 +110,99 @@ hr.fade{
 }
 
 
+/*ISM animation*/
+#ISM-animation{
+	width:100%;
+	overflow:hidden;
+	border-bottom:3px solid #000000;
+	display:block;
+	height:240px;
+}
+
+.shuttle img{
+	width:100px;
+	height:50px;
+	-webkit-animation-name: shuttle;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:cubic-bezier(0.4, 0, 1, 1);
+	-webkit-animation-direction:normal;
+	animation-name: shuttle;
+	animation-duration: 20s;
+	animation-iteration-count:infinite;
+	animation-timing-function:cubic-bezier(0.4, 0, 1, 1);
+	animation-direction:normal;
+}
+.cl-one img{
+	height:60px;
+	width:120px;
+	-webkit-animation-name: cloud1;
+	-webkit-animation-duration: 40s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud1;
+	animation-duration: 40s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+	
+}
+.cl-two img{
+	height:50px;
+	width:90px;
+	-webkit-animation-name: cloud2;
+	-webkit-animation-duration: 50s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud2;
+	animation-duration:50s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+	
+}
+.cl-three img{
+	height:60px;
+	width:100px;
+	-webkit-animation-name: cloud3;
+	-webkit-animation-duration: 35s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud3;
+	animation-duration:35s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+}
+.cl-four img{
+	-webkit-animation-name: cloud4;
+	-webkit-animation-duration: 30s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud4;
+	animation-duration:30s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+}
+.sun img{
+	height:60px;
+	width:60px;
+	-webkit-animation-name: sun;
+	-webkit-animation-duration: 120s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: sun;
+	animation-duration:120s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+}
+.buildings img{
+	width:100%;
+}

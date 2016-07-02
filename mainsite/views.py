@@ -39,10 +39,7 @@ def register(request):
 def success(request):
 	return render(request, 'registration/success.html', {})
 
-def loginfo(request):
-	if request.user.is_authenticated:
-		name = request.user.username
-		return render(request, {'name':name})
+
 
 @login_required
 def logout_page(request):
