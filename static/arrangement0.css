@@ -1,0 +1,270 @@
+/* Common */
+
+#foot{
+	position: relative;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.lg{
+	font-size: 15px;
+	margin: 0;
+}
+
+#login form{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+
+/* Common */
+
+
+/* frontpage */
+
+#slideshow{
+	position: relative;
+	margin-top: 50px;
+	margin-right: 15%;
+	margin-left: 15%;
+	height: 700px;
+}
+
+#slides{
+	height: 100%;
+}
+
+.slide-pics{
+	display: none;
+}
+
+.arrows{
+	cursor: pointer;
+}
+
+.rounds{
+	height: 13px;
+	width: 13px;
+	padding: 0;
+	cursor: pointer;
+}
+
+#about-us-short{
+	position: relative;
+	padding-right: 10%;
+	padding-left: 10%;
+}
+
+#news{
+	position: relative;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	height: 800px;
+}
+
+#news-box{
+	position: relative;
+	height: 90%;
+}
+
+#btn-left, #btn-right{
+	position: absolute;
+	top: 50%;
+}
+
+
+/* about-us */
+
+#side-nav{
+	position: relative;
+	padding-top: 70px;
+}
+
+#about-us{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+	padding-bottom: 50px;
+}
+
+#about-us-p{
+	padding-bottom: 50px;
+}
+
+#about-us-img{
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.pic-btn{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.pic-btn a{
+	position: relative;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+.pic{
+	display: block;
+	margin: auto;
+}
+
+/* Our Projects */
+
+#project-info{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+#project-classify{
+	position: relative;
+	padding-bottom: 20px;
+	padding-top: 50px;
+}
+
+#project-classify a{
+	text-decoration: none;
+}
+
+/* completed projects */
+
+#project-list{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+#projects{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+
+
+/* members */
+
+
+
+#member-info{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+#member-classify{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+	padding-bottom: 20px;
+	padding-top: 50px;
+}
+
+#member-classify h4{
+	padding-bottom: 20px;
+}
+
+#member-search{
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+#first, #second, #third, #fourth{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* active members */
+
+.year{
+	position: relative;
+	padding-right: 20%;
+	padding-left: 20%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.student{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#download{
+	position: relative;
+	top:5px;
+}
+
+/* registration */
+
+#registration{
+	position: relative;
+	padding-top: 200px;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-bottom: 200px;
+}
+
+#login label, input{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* add projects */
+
+#addproject{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+/* Profile */
+
+#userdetails{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+#userprojects{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+/* Expo */
+
+#expo{
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+#expo-body{
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}

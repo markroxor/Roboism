@@ -1,0 +1,40 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+		<style type="text/css">
+			#_projects{
+				background-color: rgb(244,67,54);
+				color: white;
+			}
+		</style>
+		<div id="side-nav" class="w3-container">
+			<div class="w3-container">
+				<a href="/about-us/" class="w3-left" style="padding-right:20px";><img src="/static/arrow_left.png"></a>
+				<h4 class="w3-left">About Us</h4>
+				<a href="/achievements/" class="w3-right" style="padding-left:20px";><img src="/static/arrow_right.png"></a>
+				<h4 class="w3-right">Our Achievements</h4>
+			</div>
+		</div>
+
+		<div id="project-info" class="w3-container">
+			<h3 class="w3-center">Our Projects</h3>
+			<p>At RoboISM, students are encouraged to come up with new ideas and actively apply them. Hence, RoboISM boasts of large collection of projects in different domains. Right as of now, RoboISM have total {{ count.total }} projects. Anyone can view them and their code (if present), they are all open source on Github. Below are the list of both ongoing and completed projects.</p>
+			<div id="project-classify" class="w3-container w3-row-padding">
+				<div class="w3-container w3-col s6">
+					<a href="/projects/completed" class="w3-left" title="completed projects">
+						<h5>Completed Projects</h5>
+						<img class="pic" src="/static/completed.jpg">
+					</a>
+					<p class="w3-left">Total Projects : {{ count.completed }}</p>
+				</div>
+				<div class="w3-container w3-col s6">
+					<a href="/projects/ongoing" class="w3-right" title="ongoing projects">
+						<h5>Ongoing Projects</h5>
+						<img class="pic" src="/static/ongoing.jpg">
+					</a>
+					<p class="w3-right">Total Projects : {{ count.ongoing }}</p>
+				</div>
+			</div>
+		</div>
+
+
+{% endblock %}

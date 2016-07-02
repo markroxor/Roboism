@@ -1,0 +1,21 @@
+language: python
+python:
+  - "2.7"
+  - "2.7.6"
+
+install:
+  - pip install -r requirements.txt
+
+script: 
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py collectstatic
+  - python manage.py test
+
+notifications:
+  email: false
+#before_script:
+#  - "pep8 --exclude=migrations --ignore=E501,E225 src"
+#  - pyflakes -x W src
+#script:
+#  - python setup.py test

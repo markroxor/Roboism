@@ -1,0 +1,63 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+		<style type="text/css">
+			#_members{
+				background-color: rgb(244,67,54);
+				color: white;
+			}
+		</style>
+
+		<div id="side-nav" class="w3-container">
+			<div class="w3-container">
+				<a href="/support-us/" class="w3-right" style="padding-left:20px";><img src="/static/arrow_right.png"></a>
+				<h4 class="w3-right">Support Us!</h4>
+				<a href="/tutorials/" class="w3-left" style="padding-right:20px";><img src="/static/arrow_left.png"></a>
+				<h4 class="w3-left">Tutorials</h4>
+			</div>
+		</div>
+
+		<div id="member-info" class="w3-container">
+			<p>We at RoboISM do not differentiate on members on basis year. Anyone who is willing to learn or share his/her knowledge are more than welcome to come forward, express their views and participate.</p>
+			<p>
+				However, membership of RoboISM is granted to a student only after a rigorous interview about his technical knowledge, past project and most importantly, enthusiasm about robotics. An interview is held for selection of first year member's generally around the month of september or october. Any year member can apply to be part of RoboISM all year round. Once in the club, students undergo various courses like programming, embedded, designing etc. according to their field of interest, and encouraged to make projects and participate in various Hackathons and Competitions.<br><br>
+				It should be also mentioned that RoboISM struggle from extreme shortage of funds, and so we generally fund our own projects or borrow materials from club's store. 
+			</p>
+		</div>
+
+		<div id="member-classify" class="w3-container">
+			<h4 class="w3-center">Search Members by Year</h4>
+			<div class="w3-row-padding w3-container">
+				<div class="w3-col s6 w3-container">
+					<div id="first" class="w3-container">
+						<a class="w3-hover-text-red" href="active/#first-yr"><h5>First Year Members</h5></a>
+						<p>Total Member Count : {{count.first }}</p>
+					</div>
+					<div id="second" class="w3-container">
+						<a class="w3-hover-text-red" href="active/#second-yr"><h5>Second Year Members</h5></a>
+						<p>Total Member Count : {{count.second }}</p>
+					</div>
+					<div id="third" class="w3-container">
+						<a class="w3-hover-text-red" href="active/#third-yr"><h5>Third Year Members</h5></a>
+						<p>Total Member Count : {{count.third}}</p>
+					</div>
+					<div id="fourth" class="w3-container">
+						<a class="w3-hover-text-red" href="active/#final-yr"><h5>Final Year Members</h5></a>
+						<p>Total Member Count : {{count.fourth }}</p>
+					</div>
+				</div>
+
+				<div class="w3-col s5 w3-container">
+				<a class="w3-hover-text-red" href="alumni/#heading"><h5>Alumni Members</h5></a>
+					<p>Total Member Count : {{count.alumni}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="member-search" class="w3-container w3-center">
+			<! please help here!>
+			<h4 class="w3-center">Or<br>Search by Name</h4>
+			<input id="search-bar" type="search" placeholder="Search member name">
+			<button class="w3-btn w3-round w3-black w3-hover-red">Search</button>
+		</div>
+
+{% endblock %}

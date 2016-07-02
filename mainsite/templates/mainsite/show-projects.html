@@ -1,0 +1,28 @@
+{% extends 'mainsite/base.html' %}
+{% block content %}
+
+		<div id="show-projects" class="w3-container">
+			<h3 class="w3-center">Project's of {{data.name}} </h3>
+			<div id="ongoing" class="w3-container">
+				<h4 class="w3-center">Ongoing Projects</h4>
+				{% for d in data %}
+				<div class="w3-container w3-row-padding">
+					<div class="w3-container w3-col s3">
+						<img src="#">
+					</div>
+					<div class="w3-container w3-col s6">
+						<h5>{{ data.projects.name }}</h5>
+						<p>{{ data.projects.description }}</p>
+						<p>Completed by: {{  }}</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+			<div id="completed" class="w3-container">
+				
+			</div>
+		</div>
+
+
+{% endblock %}

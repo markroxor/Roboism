@@ -1,0 +1,16 @@
+{% extends "registration/base.html" %}
+{% block title %}Registration Successful{% endblock %}
+{% block head %}
+ Registration Completed Successfully
+{% endblock %}
+{% block content %}
+
+	<div class="w3-container">
+		<h3>Please Fill your information before proceeding. You can attach resume, profile picture etc. later also from your edit profile section.</h3>
+		<form id="fill_info" class="w3-container" method="POST" class="post-form">{% csrf_token %}
+			{{ details.as_p }}
+		<button type="submit" class="save w3-btn w3-round-xlarge w3-blue w3-hover-red">Save and Proceed</button>
+		</form>
+	</div>
+
+{% endblock %}

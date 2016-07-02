@@ -1,0 +1,203 @@
+/* common */
+
+footer{
+	background-color: rgb(50, 50, 50);
+	color:white;
+}
+
+footer p{
+	font-size: 13px;
+}
+
+footer p a{
+	text-decoration: none;
+}
+
+#logo img{
+	border: 3px solid white;
+	border-radius:70%;
+	height:30px;
+	width:30px;
+}
+
+#cup img{
+  position: relative;;
+  bottom: 2px;
+	height:20px;
+	width:20px;
+}
+
+hr.fade{
+	border: 0;
+	height:2px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+/* common */
+
+/* frontpage */
+
+
+#news{
+	border: 2px solid black;
+}
+
+.rounds{
+	border: 1px solid grey;
+}
+
+
+/* about us */
+
+.pic{
+    transition: all 1s ease-out;
+}
+
+
+
+@keyframes changeopacity{
+	from{opacity: 1}
+	to{opacity: 0.2}
+}
+
+@keyframes movetext{
+	from{}
+	to{}
+}
+
+.pic:hover{
+     transform:scale(1.1);
+     animation: changeopacity 1s ease-out 1 forwards;
+}
+
+.pic:hover + pic-info{
+	transform: scale(1.25);
+	animation: movetext 1s ease-out forwards;
+}
+
+/* members */
+
+#member-classify a{
+	text-decoration: none;
+}
+
+#member-classify p{
+	font-size: 15px;
+	margin: 0;
+}
+
+/* active members */
+
+.year h5{
+	font-size: 18px;
+}
+
+.year p{
+	font-size: 15px;
+}
+
+#nav-bar li{
+	background-color:#000000;
+	opacity:0.7;
+}
+#nav-bar li{
+	color:#FFFFFF;
+}
+
+/*ISM animation*/
+#ISM-animation{
+	width:100%;
+	overflow:hidden;
+	border-bottom:3px solid #000000;
+	display:block;
+	height:240px;
+}
+
+.shuttle img{
+	width:100px;
+	height:50px;
+	-webkit-animation-name: shuttle;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:cubic-bezier(0.4, 0, 1, 1);
+	-webkit-animation-direction:normal;
+	animation-name: shuttle;
+	animation-duration: 20s;
+	animation-iteration-count:infinite;
+	animation-timing-function:cubic-bezier(0.4, 0, 1, 1);
+	animation-direction:normal;
+}
+.cl-one img{
+	height:60px;
+	width:120px;
+	-webkit-animation-name: cloud1;
+	-webkit-animation-duration: 40s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud1;
+	animation-duration: 40s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+	
+}
+.cl-two img{
+	height:50px;
+	width:90px;
+	-webkit-animation-name: cloud2;
+	-webkit-animation-duration: 50s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud2;
+	animation-duration:50s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+	
+}
+.cl-three img{
+	height:60px;
+	width:100px;
+	-webkit-animation-name: cloud3;
+	-webkit-animation-duration: 35s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud3;
+	animation-duration:35s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+}
+.cl-four img{
+	-webkit-animation-name: cloud4;
+	-webkit-animation-duration: 30s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: cloud4;
+	animation-duration:30s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+}
+.sun img{
+	height:60px;
+	width:60px;
+	-webkit-animation-name: sun;
+	-webkit-animation-duration: 120s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-direction:normal;
+	animation-name: sun;
+	animation-duration:120s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	animation-direction:normal;
+}
+.buildings img{
+	width:100%;
+}
