@@ -1,0 +1,4 @@
+myvenv
+mainsite/migrations
+mainsite/*.pyc
+mysite/*.pyc
