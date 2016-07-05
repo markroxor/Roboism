@@ -18,7 +18,11 @@
 	padding-bottom: 20px;
 }
 
-
+#toplogo img{
+	position: absolute;
+	max-height: 50px;
+	padding-top: 10px;
+}
 /* Common */
 
 
