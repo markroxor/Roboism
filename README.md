@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/markroxor/Roboism.svg?token=FzX7CPA4K1qbQP1HdyLt&branch=master)
+![Build Status](https://travis-ci.com/markroxor/Roboism.svg?token=FzX7CPA4K1qbQP1HdyLt&branch=master)
 
 
 ## RoboISM - Running at [roboism.markroxor.in](roboism.markroxor.in)
