@@ -3,6 +3,10 @@ python:
   - "2.7"
   - "2.7.6"
 
+env:
+  global:
+  - secure: "OqMFvdpK50auuXxGFXj6eeCvCCjBsLCgryQSjXLLczPtWKjl5NvxD2C2pFXVx7My5aC++72GJtot+JSdlthZ1uFdygo4LAl1sgMbO1QCWbw0b4nK//HS3mvfmf+7m3/5JIdnUbCoAxvNerhav62myT+gJ/kGSlfj6dVaTgSDATMG2hmLxYJON6Im44pr3EohgA5i5NO50jdFxpvabpemjzZ3th7kPjiVoAbP61TSr0CtdjapwKSa3ucvCkxj5wCt1BxMhujKDQGXd27+0BFU8g8NQ8aWJKjZoo+ykNFna3B/nI6KALplYl9d/pxHe7/m7vXaerExTD3jIGIXfS+4uNTXipXNDP9aCDMGSZLvvGWCNnHPaJ48ZqBsbkmlhCEp6BUqYUfTSmQCrDrgU8yLkbkMgq0nStpDKS5RBlDnc0miL9zL+4EXpv6aXuFQES1QxUmLR6WPn8jDRXmd+X+6NShrZWgpEpcm0sjfRrHvJxnBT6HlAdntl9H3eh5cD/zcyIKZfP2BvhMxRvZ6MiMOmR3dySm/jF2SGXk3nc8K75lkCafnt1NGHxJrQ921Z48ndQIUwXErZ8Y07wNOzDDu/s4JzqDhjnKmolevbxpggv4J93yHL4/TF2+C/a7GFs1k5lev8TJXWXoP7EnPJLu0nZ/17o2NB7R0YJkdUUMY6V4="
+
 install:
   - pip install -r requirements.txt
 
